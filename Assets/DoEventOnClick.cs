@@ -12,4 +12,5 @@ public class DoEventOnClick : MonoBehaviour
     {
         on_click.Invoke();
     }
+    
 }
