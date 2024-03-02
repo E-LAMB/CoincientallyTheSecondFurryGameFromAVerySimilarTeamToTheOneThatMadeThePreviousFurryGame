@@ -7,15 +7,22 @@ public class DoEventOnTrigger : MonoBehaviour
 {
 
     public UnityEvent on_enter;
+    public UnityEvent on_leave;
+
     public string filter;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("TriggerAttempt");
         if (other.tag == filter)
         {
-            Debug.Log("Succeed");
             on_enter.Invoke();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == filter)
+        {
+            on_leave.Invoke();
         }
     }
     

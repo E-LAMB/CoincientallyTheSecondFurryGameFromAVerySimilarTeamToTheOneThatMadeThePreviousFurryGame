@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2982568659907509545}
   - component: {fileID: 400880800725292566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1046396353628121658}
   - component: {fileID: 8708915505173571361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Teleporters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ Transform:
   - {fileID: 6165041820378812426}
   - {fileID: 2982568659907509545}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8708915505173571361
 MonoBehaviour:
@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6165041820378812426}
   - component: {fileID: 4460739522925806145}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
