@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public LayerMask ladder;
     public LayerMask rough;
     public LayerMask oob;
+    public LayerMask checkpoint;
 
     public bool is_grounded;
     public bool is_laddered;
@@ -106,7 +107,13 @@ public class Player : MonoBehaviour
         }
 
         my_col.enabled = true;
-        
+
+        if (Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, checkpoint))
+        {
+            new_checkpoint = gameObject.transform.position;
+        }
+
+
         if (Vector3.zero != new_checkpoint && Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, oob))
         {
             checkpoint_time = 3f;
