@@ -41,7 +41,14 @@ public class Player : MonoBehaviour
 
     public Vector3 new_checkpoint;
 
+    public float float_speed;
+
     public float checkpoint_time;
+
+    public SpriteRenderer walking;
+    public SpriteRenderer standing;
+
+    public GameObject drone;
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +76,17 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetAxisRaw("Horizontal") == 0) 
+        {
+            walking.enabled = false;
+            standing.enabled = true;
+
+        } else
+        {
+            walking.enabled = true;
+            standing.enabled = false;
+            walking.flipX = Input.GetAxisRaw("Horizontal") < 0;
+        }
 
         is_grounded = Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, ground);
         is_laddered = Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, ladder);
@@ -119,6 +137,8 @@ public class Player : MonoBehaviour
             checkpoint_time = 3f;
         }
 
+        drone.SetActive(checkpoint_time > 0f);
+
         if (checkpoint_time < 0f)
         {
             if (!dashing)
@@ -151,16 +171,23 @@ public class Player : MonoBehaviour
             }
         } else
         {
-            checkpoint_time -= Time.deltaTime;
             my_col.enabled = false;
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, new_checkpoint, float_speed * Time.deltaTime);
+            rb.velocity = Vector2.zero;
+            my_col.enabled = false;
+            /*
             saved_vel = Vector2.zero;
-            saved_vel.y += 1f;
+            saved_vel.y += float_speed;
             rb.velocity = saved_vel;
             if (checkpoint_time < 0.5f)
             {
                 gameObject.transform.position = new_checkpoint;
                 checkpoint_time = -1f;
                 rb.velocity = Vector2.zero;
+            }*/
+            if (Vector3.Distance(gameObject.transform.position, new_checkpoint) < 0.1f && checkpoint_time > 0.5f)
+            {
+                checkpoint_time = -1f; 
             }
         }
 
