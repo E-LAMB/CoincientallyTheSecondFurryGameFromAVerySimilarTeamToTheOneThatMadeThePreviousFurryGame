@@ -22,6 +22,7 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         float calc = (my_pos.position.x - my_tar.position.x);
         if (0f > calc) { calc = calc * -1f; }
         difference.x = 0f;
@@ -38,6 +39,9 @@ public class FollowPlayer : MonoBehaviour
             if (my_pos.position.y < my_tar.position.y) { difference.y = 1f; } else { difference.y = -1f; }
         }
 
-        my_body.velocity += difference * Time.deltaTime * speed;
+        my_body.velocity = difference * Time.deltaTime * speed;
+        */
+
+        my_pos.position = Vector3.MoveTowards(my_pos.position, my_tar.position, (Vector3.Distance(my_pos.position, my_tar.position) / speed));
     }
 }
