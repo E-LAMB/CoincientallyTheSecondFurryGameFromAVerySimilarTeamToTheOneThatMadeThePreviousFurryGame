@@ -139,6 +139,14 @@ public class Player : MonoBehaviour
 
         drone.SetActive(checkpoint_time > 0f);
 
+        if (gained_abilities.Contains("Drone") && Input.GetKeyDown(KeyCode.Z))
+        {
+            dashing = true;
+            my_col.enabled = true;
+            gameObject.transform.position = new Vector3(1.5f, 5f, 0f);
+            rb.velocity = Vector2.zero;
+        }
+
         if (checkpoint_time < 0f)
         {
             if (!dashing)

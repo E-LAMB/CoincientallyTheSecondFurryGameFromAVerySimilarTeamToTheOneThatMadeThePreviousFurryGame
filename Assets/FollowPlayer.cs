@@ -5,13 +5,11 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
 
-    public Rigidbody2D my_body;
-
     public Transform my_pos;
     public Transform my_tar;
-    public Vector2 difference;
 
     public float speed;
+    public bool moving;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +40,21 @@ public class FollowPlayer : MonoBehaviour
         my_body.velocity = difference * Time.deltaTime * speed;
         */
 
-        my_pos.position = Vector3.MoveTowards(my_pos.position, my_tar.position, (Vector3.Distance(my_pos.position, my_tar.position) / speed));
+        /*
+        if (Vector3.Distance(my_pos.position, my_tar.position) > 3f && !moving)
+        {
+            moving = true;
+        }
+        if (Vector3.Distance(my_pos.position, my_tar.position) < 0.5f && moving)
+        {
+            moving = false;
+        }
+        */
+
+        if (moving) //(Vector3.Distance(my_pos.position, my_tar.position) / speed)
+        {
+            my_pos.position = Vector3.MoveTowards(my_pos.position, my_tar.position, (Vector3.Distance(my_pos.position, my_tar.position) / speed));
+        }
+
     }
 }
