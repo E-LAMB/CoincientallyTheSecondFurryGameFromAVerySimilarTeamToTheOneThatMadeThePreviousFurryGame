@@ -7,9 +7,13 @@ public class FollowPlayer : MonoBehaviour
 
     public Transform my_pos;
     public Transform my_tar;
+    public Transform alt_tar;
 
     public float speed;
+    public float checkpoint_speed;
     public bool moving;
+
+    public Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -53,7 +57,14 @@ public class FollowPlayer : MonoBehaviour
 
         if (moving) //(Vector3.Distance(my_pos.position, my_tar.position) / speed)
         {
-            my_pos.position = Vector3.MoveTowards(my_pos.position, my_tar.position, (Vector3.Distance(my_pos.position, my_tar.position) / speed));
+            if (player.checkpoint_time > 0f)
+            {
+                my_pos.position = Vector3.MoveTowards(my_pos.position, alt_tar.position, (Vector3.Distance(my_pos.position, alt_tar.position) / checkpoint_speed));
+            }
+            else
+            {
+                my_pos.position = Vector3.MoveTowards(my_pos.position, my_tar.position, (Vector3.Distance(my_pos.position, my_tar.position) / speed));
+            }
         }
 
     }

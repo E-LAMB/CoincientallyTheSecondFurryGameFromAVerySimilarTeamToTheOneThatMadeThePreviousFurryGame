@@ -50,6 +50,19 @@ public class Player : MonoBehaviour
 
     public GameObject drone;
 
+    public int player_action;
+    /*
+    
+    0 = Normal Gameplay
+    1 = Hacking Minigame
+    2 = Crafting
+    3 = Taskboard
+    4 = Inventory
+    5 = Journal
+    6 = Starting Journal
+
+    */
+
     // Start is called before the first frame update
     void Start()
     {
@@ -151,12 +164,14 @@ public class Player : MonoBehaviour
         {
             if (!dashing)
             {
-                if (is_laddered && Input.GetAxisRaw("Vertical") != 0)
+                if (is_laddered)
                 {
                     my_col.enabled = false;
                     saved_vel = rb.velocity; saved_vel.y = Input.GetAxis("Vertical") * climbingspeed;
-                    saved_vel.y = Mathf.Clamp(saved_vel.y, climbingspeed * -1f, climbingspeed);
-                    saved_vel.x = 0f;
+                    saved_vel.y = Mathf.Clamp(saved_vel.y, climbingspeed * - 0.5f, climbingspeed);
+                    // saved_vel.x = 0f;
+                    saved_vel.x += Input.GetAxis("Horizontal") * climbingspeed;
+                    saved_vel.x = Mathf.Clamp(saved_vel.x, (climbingspeed / 4f) * -1f, (climbingspeed / 4f));
                     rb.velocity = saved_vel;
 
                 } else
