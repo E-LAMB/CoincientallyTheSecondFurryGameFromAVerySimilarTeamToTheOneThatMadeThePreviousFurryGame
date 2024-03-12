@@ -90,150 +90,159 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxisRaw("Horizontal") == 0) 
+        if (Mind.player_has_control)
         {
-            walking.enabled = false;
-            standing.enabled = true;
-
-        } else
-        {
-            walking.enabled = true;
-            standing.enabled = false;
-            walking.flipX = Input.GetAxisRaw("Horizontal") < 0;
-        }
-
-        ladder_is_close = Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, ladder);
-        if (!ladder_is_close)
-        {
-            ladder_is_close = gained_abilities.Contains("Climber") && Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, rough);
-        }
-        if (is_laddered) { is_grounded = Physics2D.OverlapCircle(groundchecker.transform.position, 0.25f, ground); }
-        else { is_grounded = Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, ground); }
-
-        Vector3 saved_vel = Vector3.zero;
-
-        if (gained_abilities.Contains("Hack") && Input.GetKeyDown(KeyCode.H))
-        {
-            wearing_hackvision = !wearing_hackvision;
-        }
-
-        if (dash_time > -2f)
-        {
-            dash_time -= Time.deltaTime;
-
-        } else
-        {
-            if (gained_abilities.Contains("Dash") && Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetAxisRaw("Horizontal") == 0)
             {
-                saved_vel = rb.velocity; saved_vel.x += dash_direction * dashing_speed.x;
-                if (is_grounded)
-                {
-                    saved_vel.y = dashing_speed.y;
-                } else
-                {
-                    saved_vel.y = 0f;
-                }
-                rb.velocity = saved_vel;
-                dash_time = 0f;
-                dashing = true;
+                walking.enabled = false;
+                standing.enabled = true;
+
             }
-        }
+            else
+            {
+                walking.enabled = true;
+                standing.enabled = false;
+                walking.flipX = Input.GetAxisRaw("Horizontal") < 0;
+            }
 
-        my_col.enabled = true;
+            ladder_is_close = Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, ladder);
+            if (!ladder_is_close)
+            {
+                ladder_is_close = gained_abilities.Contains("Climber") && Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, rough);
+            }
+            if (is_laddered) { is_grounded = Physics2D.OverlapCircle(groundchecker.transform.position, 0.25f, ground); }
+            else { is_grounded = Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, ground); }
 
-        if (Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, checkpoint))
-        {
-            new_checkpoint = gameObject.transform.position;
-        }
+            Vector3 saved_vel = Vector3.zero;
 
+            if (gained_abilities.Contains("Hack") && Input.GetKeyDown(KeyCode.H))
+            {
+                wearing_hackvision = !wearing_hackvision;
+            }
 
-        if (Vector3.zero != new_checkpoint && Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, oob))
-        {
-            checkpoint_time = 3f;
-        }
+            if (dash_time > -2f)
+            {
+                dash_time -= Time.deltaTime;
 
-        drone.SetActive(checkpoint_time > 0f);
+            }
+            else
+            {
+                if (gained_abilities.Contains("Dash") && Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    saved_vel = rb.velocity; saved_vel.x += dash_direction * dashing_speed.x;
+                    if (is_grounded)
+                    {
+                        saved_vel.y = dashing_speed.y;
+                    }
+                    else
+                    {
+                        saved_vel.y = 0f;
+                    }
+                    rb.velocity = saved_vel;
+                    dash_time = 0f;
+                    dashing = true;
+                }
+            }
 
-        if (gained_abilities.Contains("Drone") && Input.GetKeyDown(KeyCode.Z))
-        {
-            dashing = true;
             my_col.enabled = true;
-            gameObject.transform.position = new Vector3(1.5f, 5f, 0f);
-            rb.velocity = Vector2.zero;
-        }
 
-        if (checkpoint_time < 0f)
-        {
-            if (!dashing)
+            if (Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, checkpoint))
             {
-                if (ladder_is_close && !is_laddered && Input.GetAxis("Vertical") > 0)
-                {
-                    is_laddered = true;
+                new_checkpoint = gameObject.transform.position;
+            }
 
-                } 
-                else if (is_laddered && !ladder_is_close)
-                {
-                    is_laddered = false;
-                }
-                else if (is_laddered && ladder_is_close && Input.GetAxis("Vertical") < 0)
-                {
-                    is_laddered = false;
-                }
-                else if (is_laddered && ladder_is_close && is_grounded && Input.GetAxis("Horizontal") != 0)
-                {
-                    is_laddered = false;
-                }
 
-                if (is_laddered)
-                {
-                    my_col.enabled = false;
-                    saved_vel = rb.velocity; saved_vel.y = Input.GetAxis("Vertical") * climbingspeed / 2f;
-                    saved_vel.y = Mathf.Clamp(saved_vel.y, 0f, climbingspeed);
-                    // saved_vel.x = 0f;
-                    saved_vel.x = Input.GetAxis("Horizontal") * climbingspeed;
-                    saved_vel.x = Mathf.Clamp(saved_vel.x, (climbingspeed / 4f) * -1f, (climbingspeed / 4f));
-                    rb.velocity = saved_vel;
-
-                } else
-                {
-                    saved_vel = rb.velocity;
-
-                    saved_vel.x = Input.GetAxis("Horizontal") * speed;
-
-                    saved_vel.x = Mathf.Clamp(saved_vel.x, maxspeed * -1f, maxspeed);
-                    rb.velocity = saved_vel;
-                }
-
-                if (Input.GetAxisRaw("Horizontal") != 0)
-                {
-                    dash_direction = Input.GetAxisRaw("Horizontal");
-                }
-            } else
+            if (Vector3.zero != new_checkpoint && Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, oob))
             {
-                if (is_grounded && dash_time < -0.5f)
+                checkpoint_time = 3f;
+            }
+
+            drone.SetActive(checkpoint_time > 0f);
+
+            if (gained_abilities.Contains("Drone") && Input.GetKeyDown(KeyCode.Z))
+            {
+                dashing = true;
+                my_col.enabled = true;
+                gameObject.transform.position = new Vector3(1.5f, 5f, 0f);
+                rb.velocity = Vector2.zero;
+            }
+
+            if (checkpoint_time < 0f)
+            {
+                if (!dashing)
                 {
-                    dashing = false;
+                    if (ladder_is_close && !is_laddered && Input.GetAxis("Vertical") > 0)
+                    {
+                        is_laddered = true;
+
+                    }
+                    else if (is_laddered && !ladder_is_close)
+                    {
+                        is_laddered = false;
+                    }
+                    else if (is_laddered && ladder_is_close && Input.GetAxis("Vertical") < 0)
+                    {
+                        is_laddered = false;
+                    }
+                    else if (is_laddered && ladder_is_close && is_grounded && Input.GetAxis("Horizontal") != 0)
+                    {
+                        is_laddered = false;
+                    }
+
+                    if (is_laddered)
+                    {
+                        my_col.enabled = false;
+                        saved_vel = rb.velocity; saved_vel.y = Input.GetAxis("Vertical") * climbingspeed / 2f;
+                        saved_vel.y = Mathf.Clamp(saved_vel.y, 0f, climbingspeed);
+                        // saved_vel.x = 0f;
+                        saved_vel.x = Input.GetAxis("Horizontal") * climbingspeed;
+                        saved_vel.x = Mathf.Clamp(saved_vel.x, (climbingspeed / 4f) * -1f, (climbingspeed / 4f));
+                        rb.velocity = saved_vel;
+
+                    }
+                    else
+                    {
+                        saved_vel = rb.velocity;
+
+                        saved_vel.x = Input.GetAxis("Horizontal") * speed;
+
+                        saved_vel.x = Mathf.Clamp(saved_vel.x, maxspeed * -1f, maxspeed);
+                        rb.velocity = saved_vel;
+                    }
+
+                    if (Input.GetAxisRaw("Horizontal") != 0)
+                    {
+                        dash_direction = Input.GetAxisRaw("Horizontal");
+                    }
+                }
+                else
+                {
+                    if (is_grounded && dash_time < -0.5f)
+                    {
+                        dashing = false;
+                    }
                 }
             }
-        } else
-        {
-            my_col.enabled = false;
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, new_checkpoint, float_speed * Time.deltaTime);
-            rb.velocity = Vector2.zero;
-            my_col.enabled = false;
-            /*
-            saved_vel = Vector2.zero;
-            saved_vel.y += float_speed;
-            rb.velocity = saved_vel;
-            if (checkpoint_time < 0.5f)
+            else
             {
-                gameObject.transform.position = new_checkpoint;
-                checkpoint_time = -1f;
+                my_col.enabled = false;
+                gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, new_checkpoint, float_speed * Time.deltaTime);
                 rb.velocity = Vector2.zero;
-            }*/
-            if (Vector3.Distance(gameObject.transform.position, new_checkpoint) < 0.1f && checkpoint_time > 0.5f)
-            {
-                checkpoint_time = -1f; 
+                my_col.enabled = false;
+                /*
+                saved_vel = Vector2.zero;
+                saved_vel.y += float_speed;
+                rb.velocity = saved_vel;
+                if (checkpoint_time < 0.5f)
+                {
+                    gameObject.transform.position = new_checkpoint;
+                    checkpoint_time = -1f;
+                    rb.velocity = Vector2.zero;
+                }*/
+                if (Vector3.Distance(gameObject.transform.position, new_checkpoint) < 0.1f && checkpoint_time > 0.5f)
+                {
+                    checkpoint_time = -1f;
+                }
             }
         }
 
