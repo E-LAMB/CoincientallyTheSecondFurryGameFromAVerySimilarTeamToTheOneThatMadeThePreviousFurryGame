@@ -156,8 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 48533882}
-  speed: 0.2
-  maxspeed: 4
+  speed: 2
+  maxspeed: 2
   climbingspeed: 2
   dashing_speed: {x: 8, y: 3}
   groundchecker: {fileID: 808170788}
@@ -177,6 +177,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8192
   is_grounded: 0
+  ladder_is_close: 0
   is_laddered: 0
   gained_abilities: 
   dashing: 0
@@ -572,7 +573,7 @@ GameObject:
   - component: {fileID: 869498621}
   - component: {fileID: 869498620}
   - component: {fileID: 869498619}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -909,7 +910,7 @@ GameObject:
   - component: {fileID: 1304791901}
   - component: {fileID: 1304791900}
   - component: {fileID: 1304791899}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1039,7 +1040,7 @@ GameObject:
   - component: {fileID: 1628022964}
   - component: {fileID: 1628022963}
   - component: {fileID: 1628022962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1151,8 +1152,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628022961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1169,7 +1170,7 @@ GameObject:
   - component: {fileID: 1730009462}
   - component: {fileID: 1730009461}
   - component: {fileID: 1730009460}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1545,8 +1546,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096828381}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 1, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.624, y: 1.122, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:

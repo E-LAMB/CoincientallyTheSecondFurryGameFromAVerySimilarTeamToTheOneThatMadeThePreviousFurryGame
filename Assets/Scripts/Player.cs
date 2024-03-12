@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public LayerMask checkpoint;
 
     public bool is_grounded;
+    public bool ladder_is_close;
     public bool is_laddered;
 
     public string gained_abilities;
@@ -101,12 +102,13 @@ public class Player : MonoBehaviour
             walking.flipX = Input.GetAxisRaw("Horizontal") < 0;
         }
 
-        is_grounded = Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, ground);
-        is_laddered = Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, ladder);
-        if (!is_laddered)
+        ladder_is_close = Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, ladder);
+        if (!ladder_is_close)
         {
-            is_laddered = gained_abilities.Contains("Climber") && Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, rough);
+            ladder_is_close = gained_abilities.Contains("Climber") && Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, rough);
         }
+        if (is_laddered) { is_grounded = Physics2D.OverlapCircle(groundchecker.transform.position, 0.25f, ground); }
+        else { is_grounded = Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, ground); }
 
         Vector3 saved_vel = Vector3.zero;
 
@@ -164,19 +166,40 @@ public class Player : MonoBehaviour
         {
             if (!dashing)
             {
+                if (ladder_is_close && !is_laddered && Input.GetAxis("Vertical") > 0)
+                {
+                    is_laddered = true;
+
+                } 
+                else if (is_laddered && !ladder_is_close)
+                {
+                    is_laddered = false;
+                }
+                else if (is_laddered && ladder_is_close && Input.GetAxis("Vertical") < 0)
+                {
+                    is_laddered = false;
+                }
+                else if (is_laddered && ladder_is_close && is_grounded && Input.GetAxis("Horizontal") != 0)
+                {
+                    is_laddered = false;
+                }
+
                 if (is_laddered)
                 {
                     my_col.enabled = false;
-                    saved_vel = rb.velocity; saved_vel.y = Input.GetAxis("Vertical") * climbingspeed;
-                    saved_vel.y = Mathf.Clamp(saved_vel.y, climbingspeed * - 0.5f, climbingspeed);
+                    saved_vel = rb.velocity; saved_vel.y = Input.GetAxis("Vertical") * climbingspeed / 2f;
+                    saved_vel.y = Mathf.Clamp(saved_vel.y, 0f, climbingspeed);
                     // saved_vel.x = 0f;
-                    saved_vel.x += Input.GetAxis("Horizontal") * climbingspeed;
+                    saved_vel.x = Input.GetAxis("Horizontal") * climbingspeed;
                     saved_vel.x = Mathf.Clamp(saved_vel.x, (climbingspeed / 4f) * -1f, (climbingspeed / 4f));
                     rb.velocity = saved_vel;
 
                 } else
                 {
-                    saved_vel = rb.velocity; saved_vel.x += Input.GetAxis("Horizontal") * speed;
+                    saved_vel = rb.velocity;
+
+                    saved_vel.x = Input.GetAxis("Horizontal") * speed;
+
                     saved_vel.x = Mathf.Clamp(saved_vel.x, maxspeed * -1f, maxspeed);
                     rb.velocity = saved_vel;
                 }
@@ -215,4 +238,19 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    private void FixedUpdate()
+    {
+        if (is_laddered)
+        {
+            Vector2 temp = rb.velocity;
+            if (temp.y < 0f) { temp.y = 0f; }
+            rb.velocity = temp;
+            rb.gravityScale = 0f;
+        } else
+        {
+            rb.gravityScale = 1f;
+        }
+    }
+
 }
