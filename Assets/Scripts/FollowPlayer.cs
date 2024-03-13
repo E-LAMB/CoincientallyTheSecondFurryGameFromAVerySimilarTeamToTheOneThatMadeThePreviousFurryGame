@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
@@ -11,7 +12,9 @@ public class FollowPlayer : MonoBehaviour
 
     public float speed;
     public float checkpoint_speed;
+    public float the_div;
     public bool moving;
+    public float current_speed;
 
     public Player player;
 
@@ -63,7 +66,10 @@ public class FollowPlayer : MonoBehaviour
             }
             else
             {
-                my_pos.position = Vector3.MoveTowards(my_pos.position, my_tar.position, (Vector3.Distance(my_pos.position, my_tar.position) / speed));
+                speed = (Vector3.Distance(my_pos.position, my_tar.position) / the_div);
+                if (speed < current_speed) { current_speed -= Time.deltaTime; } else { current_speed += Time.deltaTime; }
+                if (speed < 0.0001f && speed > -0.0001) { current_speed = 0f; }
+                my_pos.position = Vector3.MoveTowards(my_pos.position, my_tar.position, current_speed);
             }
         }
 
