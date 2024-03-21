@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Interactible : MonoBehaviour
 {
+
+    public bool can_interact_with;
+
     // Start is called before the first frame update
     void Start()
     {
