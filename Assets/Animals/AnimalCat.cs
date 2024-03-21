@@ -54,11 +54,21 @@ public class AnimalCat : MonoBehaviour
                 ideal_position.x = Random.Range(left_bound.transform.position.x, right_bound.transform.position.x);
                 if (time_since_burrow > 15f)
                 {
-                    state = 0;
+                    state = 2;
                     time_since_burrow = 0f;
                     idle_time = -5f;
-                    my_anim.SetTrigger("Burrow");
-                    ideal_position.x = burrows[0].transform.position.x;
+
+                    float dist = 99999f;
+
+                    for (int i = 0; i < burrows.Length; i++)
+                    {
+                        if (Vector3.Distance(burrows[i].transform.position, self.position) < dist)
+                        {
+                            ideal_position.x = burrows[i].transform.position.x;
+                            dist = Vector3.Distance(burrows[i].transform.position, self.position);
+                        }
+                    }
+
                 } else
                 {
                     state = 1;
@@ -72,6 +82,30 @@ public class AnimalCat : MonoBehaviour
             {
                 state = 0;
                 idle_time = 0;
+            }
+        }
+        if (state == 2)
+        {
+            self.position = Vector3.MoveTowards(self.position, ideal_position, Time.deltaTime * movement_speed);
+            if (Vector3.Distance(self.position, ideal_position) < 0.2f)
+            {
+                int heat = 0;
+                bool found = false;
+
+                while (!found && heat < 99)
+                {
+                    heat += 1;
+                    ideal_position.x = burrows[Random.Range(0, burrows.Length)].transform.position.x;
+                    if (Vector3.Distance(self.position, ideal_position) > 0.3f)
+                    {
+                        found = true;
+                    }
+                }
+
+                state = 0;
+                time_since_burrow = 0f;
+                idle_time = -5f;
+                my_anim.SetTrigger("Burrow");
             }
         }
     }
