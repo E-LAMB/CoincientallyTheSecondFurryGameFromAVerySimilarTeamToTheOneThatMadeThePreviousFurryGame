@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class DoEventOnClick : MonoBehaviour
-{
+{/*
 
     public UnityEvent on_click;
 
@@ -41,4 +41,4 @@ public class DoEventOnClick : MonoBehaviour
         }
     }
     
-}
+*/}

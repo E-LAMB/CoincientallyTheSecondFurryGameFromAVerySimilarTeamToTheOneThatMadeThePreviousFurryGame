@@ -32,10 +32,6 @@ public class Player : MonoBehaviour
     public float dash_direction;
     public float dash_time;
 
-    public int amount_stick;
-    public int amount_rock;
-    public int amount_metal;
-
     public Collider2D my_col;
 
     public UnityEvent listening_to;
@@ -77,9 +73,11 @@ public class Player : MonoBehaviour
 
     public void GainItem(string new_type)
     {
+        /*
         if (new_type == "stick") {amount_stick += 1;}
         if (new_type == "rock") {amount_rock += 1;}
         if (new_type == "metal") {amount_metal += 1;}
+        */
     }
 
     public void GainAbility(string new_type)
