@@ -23,9 +23,21 @@ public class Warp : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
+    public void UseWarp(string dest)
+    {
+        if (dest == "b")
+        {
+            player.position = point_b.transform.position;
+        } else if (dest == "a")
+        {
+            player.position = point_a.transform.position;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        /*
         if (!requires_activation && !was_in_range && (Physics2D.OverlapCircle(point_a.transform.position, range, player_mask)
         || Physics2D.OverlapCircle(point_b.transform.position, range, player_mask)))
         {
@@ -60,5 +72,6 @@ public class Warp : MonoBehaviour
         {
             was_in_range = false;
         }
+        */
     }
 }

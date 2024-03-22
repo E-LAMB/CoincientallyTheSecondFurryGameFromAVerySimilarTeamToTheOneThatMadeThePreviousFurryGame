@@ -53,13 +53,19 @@ public class CursorControl : MonoBehaviour
         {
             if (distance < distance_threshold)
             {
-                cursor_trans.localEulerAngles = new Vector3(0f, -90f, 0f);
+                cursor_trans.localEulerAngles = new Vector3(225f, -90f, 0f);
                 if (closest_interactible.can_interact_with)
                 {
                     cursor_sprite.sprite = sprite_dot;
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+                        closest_interactible.my_event.Invoke();
+                    }
+
                 }
                 else
                 {
+                    cursor_trans.localEulerAngles = new Vector3(270f, -90f, 0f);
                     cursor_sprite.sprite = sprite_cross;
                 }
             }
@@ -69,7 +75,7 @@ public class CursorControl : MonoBehaviour
             }
         } else
         {
-            cursor_trans.localEulerAngles = new Vector3(0f, -90f, 0f);
+            cursor_trans.localEulerAngles = new Vector3(225f, -90f, 0f);
             cursor_sprite.sprite = sprite_idle;
         }
     }
