@@ -8,6 +8,9 @@ public class CursorControl : MonoBehaviour
     public Interactible[] all_ints;
     public Interactible closest_interactible;
 
+    public PhotoOp[] nearby_photo_ops;
+    public PhotoOp closest_photo;
+
     public Transform cursor_trans;
     public Camera main_cam;
 
@@ -18,14 +21,20 @@ public class CursorControl : MonoBehaviour
     public Sprite sprite_dot;
     public Sprite sprite_idle;
 
+    public Sprite sprite_nocam;
+    public Sprite sprite_yescam;
+
     public float distance;
     public float distance_threshold;
     public float hide_cursor;
+
+    public bool taking_photo;
 
     // Start is called before the first frame update
     void Start()
     {
         all_ints = Object.FindObjectsOfType<Interactible>();
+        nearby_photo_ops = Object.FindObjectsOfType<PhotoOp>();
     }
 
     // Update is called once per frame
@@ -34,49 +43,95 @@ public class CursorControl : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
 
-        distance = 99999f;
-        cursor_trans.position = main_cam.ScreenToWorldPoint(Input.mousePosition);
-        cursor_trans.position = cursor_trans.position - new Vector3(0f, 0f, cursor_trans.position.z);
-
-        for (int i = 0; i < all_ints.Length; i++)
+        if (!taking_photo)
         {
-            if (Vector3.Distance(all_ints[i].transform.position, cursor_trans.position) < distance)
-            {
-                closest_interactible = all_ints[i];
-                distance = Vector3.Distance(all_ints[i].transform.position, cursor_trans.position);
-            }
-        }
 
-        cursor_trans.LookAt(closest_interactible.transform.position);
-        
-        if (distance < hide_cursor)
-        {
-            if (distance < distance_threshold)
+            distance = 99999f;
+            cursor_trans.position = main_cam.ScreenToWorldPoint(Input.mousePosition);
+            cursor_trans.position = cursor_trans.position - new Vector3(0f, 0f, cursor_trans.position.z);
+
+            for (int i = 0; i < all_ints.Length; i++)
             {
-                cursor_trans.localEulerAngles = new Vector3(225f, -90f, 0f);
-                if (closest_interactible.can_interact_with)
+                if (Vector3.Distance(all_ints[i].transform.position, cursor_trans.position) < distance)
                 {
-                    cursor_sprite.sprite = sprite_dot;
-                    if (Input.GetKeyDown(KeyCode.Mouse0))
-                    {
-                        closest_interactible.my_event.Invoke();
-                    }
+                    closest_interactible = all_ints[i];
+                    distance = Vector3.Distance(all_ints[i].transform.position, cursor_trans.position);
+                }
+            }
 
+            Vector3 look_location = closest_interactible.transform.position;
+            look_location.z = cursor_trans.position.z;
+
+            cursor_trans.LookAt(look_location);
+
+            Vector3 distance_point = closest_photo.transform.position;
+            distance_point.z = cursor_trans.position.z;
+            distance = Vector3.Distance(distance_point, cursor_trans.position);
+
+            if (distance < hide_cursor)
+            {
+                if (distance < distance_threshold)
+                {
+                    cursor_trans.localEulerAngles = new Vector3(225f, -90f, 0f);
+                    if (closest_interactible.can_interact_with)
+                    {
+                        cursor_sprite.sprite = sprite_dot;
+                        if (Input.GetKeyDown(KeyCode.Mouse0))
+                        {
+                            closest_interactible.my_event.Invoke();
+                            all_ints = Object.FindObjectsOfType<Interactible>();
+                        }
+
+                    }
+                    else
+                    {
+                        cursor_trans.localEulerAngles = new Vector3(270f, -90f, 0f);
+                        cursor_sprite.sprite = sprite_cross;
+                    }
                 }
                 else
                 {
-                    cursor_trans.localEulerAngles = new Vector3(270f, -90f, 0f);
-                    cursor_sprite.sprite = sprite_cross;
+                    cursor_sprite.sprite = sprite_point;
                 }
             }
             else
             {
-                cursor_sprite.sprite = sprite_point;
+                cursor_trans.localEulerAngles = new Vector3(225f, -90f, 0f);
+                cursor_sprite.sprite = sprite_idle;
             }
+
         } else
         {
+            distance = 99999f;
+            cursor_trans.position = main_cam.ScreenToWorldPoint(Input.mousePosition);
+            cursor_trans.position = cursor_trans.position - new Vector3(0f, 0f, cursor_trans.position.z);
+
+            cursor_sprite.sprite = sprite_nocam;
+
+            for (int i = 0; i < nearby_photo_ops.Length; i++)
+            {
+                if (Vector3.Distance(nearby_photo_ops[i].transform.position, cursor_trans.position) < distance && nearby_photo_ops[i].avaliable)
+                {
+                    closest_photo = nearby_photo_ops[i];
+                    distance = Vector3.Distance(all_ints[i].transform.position, cursor_trans.position);
+                }
+            }
+
             cursor_trans.localEulerAngles = new Vector3(225f, -90f, 0f);
-            cursor_sprite.sprite = sprite_idle;
+
+            Vector3 look_location = closest_photo.transform.position;
+            look_location.z = cursor_trans.position.z;
+            distance = Vector3.Distance(look_location, cursor_trans.position);
+
+            if (distance < distance_threshold)
+            {
+                cursor_sprite.sprite = sprite_yescam;
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    closest_photo.Capture();
+                    nearby_photo_ops = Object.FindObjectsOfType<PhotoOp>();
+                }
+            }
         }
     }
 }

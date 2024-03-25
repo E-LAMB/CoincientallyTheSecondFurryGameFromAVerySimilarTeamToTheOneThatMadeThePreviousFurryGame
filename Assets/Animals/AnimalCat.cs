@@ -48,7 +48,7 @@ public class AnimalCat : MonoBehaviour
         if (state == 0)
         {
             idle_time += Time.deltaTime;
-            if (idle_time > Random.Range(3f, 200f))
+            if (idle_time > Random.Range(1f, 200f))
             {
                 state = 1;
                 ideal_position.x = Random.Range(left_bound.transform.position.x, right_bound.transform.position.x);

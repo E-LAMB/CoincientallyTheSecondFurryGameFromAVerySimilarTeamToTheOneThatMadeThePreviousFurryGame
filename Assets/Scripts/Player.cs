@@ -47,16 +47,15 @@ public class Player : MonoBehaviour
 
     public GameObject drone;
 
+    public CursorControl cursor;
+
     public int player_action;
     /*
     
     0 = Normal Gameplay
     1 = Hacking Minigame
-    2 = Crafting
-    3 = Taskboard
-    4 = Inventory
-    5 = Journal
-    6 = Starting Journal
+    2 = Journal
+    3 = Photo
 
     */
 
@@ -64,6 +63,47 @@ public class Player : MonoBehaviour
     void Start()
     {
         listening_to.AddListener(ClearCheckpoint);
+    }
+
+    public void Button_Camera()
+    {
+        if (cursor.taking_photo)
+        {
+            ChangeState(0);
+        } else
+        {
+            ChangeState(3);
+        }
+    }
+
+    void ChangeState(int new_state)
+    {
+        player_action = new_state;
+
+        cursor.taking_photo = false;
+        Mind.player_has_control = false;
+
+        if (player_action == 0)
+        {
+            Mind.player_has_control = true;
+
+        } else if (player_action == 1)
+        {
+
+        }
+        else if (player_action == 2)
+        {
+
+        }
+        else if (player_action == 3)
+        {
+            cursor.taking_photo = true;
+        }
+        else if (player_action == 1)
+        {
+
+        }
+
     }
 
     public void ClearCheckpoint()
