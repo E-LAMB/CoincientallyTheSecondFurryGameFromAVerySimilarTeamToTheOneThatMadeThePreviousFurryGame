@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using Unity.Jobs.LowLevel.Unsafe;
 
 public class Player : MonoBehaviour
 {
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
 
     public Journal journal;
     public CursorControl cursor;
+    public GameObject hud;
 
     public int player_action;
     /*
@@ -80,14 +82,14 @@ public class Player : MonoBehaviour
 
     public void Button_Journal()
     {
-        journal.Open();
-        if (cursor.taking_photo)
+        if (journal.open)
         {
+            journal.Close();
             ChangeState(0);
         }
         else
         {
-            ChangeState(3);
+            ChangeState(2);
         }
     }
 
@@ -96,7 +98,9 @@ public class Player : MonoBehaviour
         player_action = new_state;
 
         cursor.taking_photo = false;
+        journal.open = false;
         Mind.player_has_control = false;
+        hud.SetActive(true);
 
         if (player_action == 0)
         {
@@ -108,7 +112,9 @@ public class Player : MonoBehaviour
         }
         else if (player_action == 2)
         {
-
+            journal.open = true;
+            hud.SetActive(false);
+            journal.Open();
         }
         else if (player_action == 3)
         {

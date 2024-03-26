@@ -23,16 +23,23 @@ public class Journal : MonoBehaviour
 
     }
 
+    public void Close()
+    {
+
+        my_stage.SetActive(false);
+
+    }
+
     public void TurnPage(int direction)
     {
         current_page += direction;
 
         if (current_page > page.Length - 1)
         {
-            current_page -= page.Length - 1;
+            current_page = page.Length - 1;
         } else if (current_page < 0)
         {
-            current_page += page.Length - 1;
+            current_page = 0;
         }
 
         LoadPage(current_page);

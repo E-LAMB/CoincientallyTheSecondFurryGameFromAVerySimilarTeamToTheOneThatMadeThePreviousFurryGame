@@ -126,7 +126,7 @@ public class CursorControl : MonoBehaviour
                 }
             }
 
-            cursor_trans.localEulerAngles = new Vector3(225f, -90f, 0f);
+            cursor_trans.localEulerAngles = new Vector3(260f, -90f, 0f);
 
             if (closest_photo != null)
             {
