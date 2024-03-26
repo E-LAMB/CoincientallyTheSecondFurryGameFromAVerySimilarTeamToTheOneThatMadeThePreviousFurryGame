@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
 
     public GameObject drone;
 
+    public Journal journal;
     public CursorControl cursor;
 
     public int player_action;
@@ -55,7 +56,7 @@ public class Player : MonoBehaviour
     0 = Normal Gameplay
     1 = Hacking Minigame
     2 = Journal
-    3 = Photo
+    3 = Taking Photo
 
     */
 
@@ -67,10 +68,24 @@ public class Player : MonoBehaviour
 
     public void Button_Camera()
     {
+        cursor.LocatePhotos();
         if (cursor.taking_photo)
         {
             ChangeState(0);
         } else
+        {
+            ChangeState(3);
+        }
+    }
+
+    public void Button_Journal()
+    {
+        journal.Open();
+        if (cursor.taking_photo)
+        {
+            ChangeState(0);
+        }
+        else
         {
             ChangeState(3);
         }

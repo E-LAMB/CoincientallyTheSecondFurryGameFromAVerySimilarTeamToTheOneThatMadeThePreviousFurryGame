@@ -14,6 +14,8 @@ public class PhotoOp : MonoBehaviour
         {
             Mind.all_photos += my_name;
             avaliable = false;
+            Debug.Log("Working!");
+            Debug.Log(Mind.all_photos);
             this.enabled = false;
         }
     }

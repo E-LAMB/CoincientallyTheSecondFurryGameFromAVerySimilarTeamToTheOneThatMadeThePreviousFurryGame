@@ -37,6 +37,11 @@ public class CursorControl : MonoBehaviour
         nearby_photo_ops = Object.FindObjectsOfType<PhotoOp>();
     }
 
+    public void LocatePhotos()
+    {
+        nearby_photo_ops = Object.FindObjectsOfType<PhotoOp>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -64,7 +69,7 @@ public class CursorControl : MonoBehaviour
 
             cursor_trans.LookAt(look_location);
 
-            Vector3 distance_point = closest_photo.transform.position;
+            Vector3 distance_point = closest_interactible.transform.position;
             distance_point.z = cursor_trans.position.z;
             distance = Vector3.Distance(distance_point, cursor_trans.position);
 
@@ -108,28 +113,35 @@ public class CursorControl : MonoBehaviour
 
             cursor_sprite.sprite = sprite_nocam;
 
+            closest_photo = null;
+
             for (int i = 0; i < nearby_photo_ops.Length; i++)
             {
-                if (Vector3.Distance(nearby_photo_ops[i].transform.position, cursor_trans.position) < distance && nearby_photo_ops[i].avaliable)
+                Vector3 measure = nearby_photo_ops[i].transform.position;
+                measure.z = cursor_trans.position.z;
+                if (Vector3.Distance(measure, cursor_trans.position) < distance && nearby_photo_ops[i].avaliable)
                 {
                     closest_photo = nearby_photo_ops[i];
-                    distance = Vector3.Distance(all_ints[i].transform.position, cursor_trans.position);
+                    distance = Vector3.Distance(measure, cursor_trans.position);
                 }
             }
 
             cursor_trans.localEulerAngles = new Vector3(225f, -90f, 0f);
 
-            Vector3 look_location = closest_photo.transform.position;
-            look_location.z = cursor_trans.position.z;
-            distance = Vector3.Distance(look_location, cursor_trans.position);
-
-            if (distance < distance_threshold)
+            if (closest_photo != null)
             {
-                cursor_sprite.sprite = sprite_yescam;
-                if (Input.GetKeyDown(KeyCode.Mouse0))
+                Vector3 look_location = closest_photo.transform.position;
+                look_location.z = cursor_trans.position.z;
+                distance = Vector3.Distance(look_location, cursor_trans.position);
+
+                if (distance < distance_threshold)
                 {
-                    closest_photo.Capture();
-                    nearby_photo_ops = Object.FindObjectsOfType<PhotoOp>();
+                    cursor_sprite.sprite = sprite_yescam;
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+                        closest_photo.Capture();
+                        nearby_photo_ops = Object.FindObjectsOfType<PhotoOp>();
+                    }
                 }
             }
         }
