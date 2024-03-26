@@ -36,7 +36,7 @@ public class AnimalCat : MonoBehaviour
     public void WarpToIdeal()
     {
         self.position = ideal_position;
-        Debug.Log("Did it");
+        // Debug.Log("Did it");
     }
 
     // Update is called once per frame

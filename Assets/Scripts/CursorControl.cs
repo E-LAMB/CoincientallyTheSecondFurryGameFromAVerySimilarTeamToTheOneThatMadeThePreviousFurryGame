@@ -23,6 +23,7 @@ public class CursorControl : MonoBehaviour
 
     public Sprite sprite_nocam;
     public Sprite sprite_yescam;
+    public Sprite sprite_camdeny;
 
     public float distance;
     public float distance_threshold;
@@ -136,11 +137,18 @@ public class CursorControl : MonoBehaviour
 
                 if (distance < distance_threshold)
                 {
-                    cursor_sprite.sprite = sprite_yescam;
-                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    if (closest_photo.blocked)
                     {
-                        closest_photo.Capture();
-                        nearby_photo_ops = Object.FindObjectsOfType<PhotoOp>();
+                        cursor_sprite.sprite = sprite_camdeny;
+                    }
+                    else
+                    {
+                        cursor_sprite.sprite = sprite_yescam;
+                        if (Input.GetKeyDown(KeyCode.Mouse0))
+                        {
+                            closest_photo.Capture();
+                            nearby_photo_ops = Object.FindObjectsOfType<PhotoOp>();
+                        }
                     }
                 }
             }

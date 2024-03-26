@@ -7,10 +7,11 @@ public class PhotoOp : MonoBehaviour
 
     public string my_name;
     public bool avaliable;
+    public bool blocked;
 
     public void Capture()
     {
-        if (avaliable)
+        if (avaliable && !blocked)
         {
             Mind.all_photos += my_name;
             avaliable = false;
@@ -18,17 +19,5 @@ public class PhotoOp : MonoBehaviour
             Debug.Log(Mind.all_photos);
             this.enabled = false;
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
