@@ -52,6 +52,18 @@ public class Player : MonoBehaviour
     public CursorControl cursor;
     public GameObject hud;
 
+    public GameObject tutorial_wall;
+    public GameObject tutorial_wall_2;
+    public int tutorial_stage;
+    /*
+     
+    0 = In home
+    1 = Got Journal
+    2 = Took Photo
+    3 = Checked Journal (now free)
+
+    */
+
     public int player_action;
     /*
     
@@ -224,6 +236,7 @@ public class Player : MonoBehaviour
                 my_col.enabled = true;
                 gameObject.transform.position = new Vector3(1.5f, 5f, 0f);
                 rb.velocity = Vector2.zero;
+                ClearCheckpoint();
             }
 
             if (checkpoint_time < 0f)

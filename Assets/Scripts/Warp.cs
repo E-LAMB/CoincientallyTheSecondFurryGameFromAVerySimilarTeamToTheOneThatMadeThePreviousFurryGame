@@ -73,5 +73,24 @@ public class Warp : MonoBehaviour
             was_in_range = false;
         }
         */
+
+        if (!requires_activation && was_in_range && !(Physics2D.OverlapCircle(point_a.transform.position, range, player_mask)
+        || Physics2D.OverlapCircle(point_b.transform.position, range, player_mask)))
+        {
+            was_in_range = false;
+        }
+
+        if (!requires_activation && !was_in_range && (Physics2D.OverlapCircle(point_a.transform.position, range, player_mask)
+        || Physics2D.OverlapCircle(point_b.transform.position, range, player_mask)))
+        {
+            if (Physics2D.OverlapCircle(point_a.transform.position, range, player_mask))
+            {
+                UseWarp("b");
+            } else
+            {
+                UseWarp("a");
+            }
+            was_in_range = true;
+        }
     }
 }
