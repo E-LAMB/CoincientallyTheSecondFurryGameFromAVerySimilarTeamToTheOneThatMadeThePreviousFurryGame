@@ -89,10 +89,7 @@ public class Warp : MonoBehaviour
         {
             if (Physics2D.OverlapCircle(point_a.transform.position, range, player_mask))
             {
-                if (!one_direction)
-                {
-                    UseWarp("b");
-                }
+                UseWarp("b");
             } else
             {
                 UseWarp("a");
