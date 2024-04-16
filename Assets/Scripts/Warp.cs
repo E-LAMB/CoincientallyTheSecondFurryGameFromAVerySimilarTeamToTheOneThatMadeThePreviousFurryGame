@@ -16,6 +16,7 @@ public class Warp : MonoBehaviour
     public float range;
 
     public bool requires_activation;
+    public bool one_direction;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,10 @@ public class Warp : MonoBehaviour
             player.position = point_b.transform.position;
         } else if (dest == "a")
         {
-            player.position = point_a.transform.position;
+            if (!one_direction)
+            {
+                player.position = point_a.transform.position;
+            }
         }
     }
 
@@ -85,7 +89,10 @@ public class Warp : MonoBehaviour
         {
             if (Physics2D.OverlapCircle(point_a.transform.position, range, player_mask))
             {
-                UseWarp("b");
+                if (!one_direction)
+                {
+                    UseWarp("b");
+                }
             } else
             {
                 UseWarp("a");
