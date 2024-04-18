@@ -29,6 +29,18 @@ public class DialougePlayer : MonoBehaviour
         
     }
 
+    public void StealFrom(DialougeScript input)
+    {
+        int place = 0;
+        while (place < input.script_lines.Length)
+        {
+            stolen_lines[place] = input.script_lines[place];
+            place += 1;
+        }
+        current_option = 0;
+        ProcessLine();
+    }
+
     public void ProcessLine()
     {
         if (stolen_lines[current_option].Contains("/com"))
@@ -82,13 +94,13 @@ public class DialougePlayer : MonoBehaviour
                     sprite_image.sprite = all_sprites[dummy_int];
                 }
             }
-            else if (stolen_lines[current_option] == "temp")
+            else if (stolen_lines[current_option] == "auto on")
             {
-                // temp
+                automated_progression = true;
             }
-            else if (stolen_lines[current_option] == "temp")
+            else if (stolen_lines[current_option] == "auto off")
             {
-                // temp
+                automated_progression = false;
             }
             else if (stolen_lines[current_option] == "temp")
             {
@@ -111,6 +123,10 @@ public class DialougePlayer : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(progression_key) && can_progress) 
+        {
+            ProcessLine();
+        }
+        if (automated_progression)
         {
             ProcessLine();
         }
