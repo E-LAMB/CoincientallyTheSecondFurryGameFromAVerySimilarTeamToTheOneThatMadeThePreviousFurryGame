@@ -52,6 +52,8 @@ public class Player : MonoBehaviour
     public CursorControl cursor;
     public GameObject hud;
 
+    public Animator anim;
+
     public GameObject tutorial_wall;
     public GameObject tutorial_wall_2;
     public int tutorial_stage;
@@ -163,17 +165,26 @@ public class Player : MonoBehaviour
     {
         if (Mind.player_has_control)
         {
-            if (Input.GetAxisRaw("Horizontal") == 0)
+            if (standing != null)
             {
-                walking.enabled = false;
-                standing.enabled = true;
+                if (Input.GetAxisRaw("Horizontal") == 0)
+                {
+                    walking.enabled = false;
+                    standing.enabled = true;
 
+                }
+                else
+                {
+                    walking.enabled = true;
+                    standing.enabled = false;
+                    walking.flipX = Input.GetAxisRaw("Horizontal") < 0;
+                }
             }
-            else
+            
+            if (anim != null)
             {
-                walking.enabled = true;
-                standing.enabled = false;
-                walking.flipX = Input.GetAxisRaw("Horizontal") < 0;
+                anim.SetFloat("Move", Input.GetAxisRaw("Horizontal"));
+                anim.SetBool("Moving", Input.GetAxisRaw("Horizontal") != 0f);
             }
 
             ladder_is_close = Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, ladder);
