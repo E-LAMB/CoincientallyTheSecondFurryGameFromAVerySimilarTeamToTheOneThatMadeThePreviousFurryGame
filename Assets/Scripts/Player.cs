@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using Unity.Jobs.LowLevel.Unsafe;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -65,6 +66,8 @@ public class Player : MonoBehaviour
     3 = Checked Journal (now free)
 
     */
+
+    public Transform walking_png;
 
     public int player_action;
     /*
@@ -163,6 +166,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (anim != null)
+        {
+            anim.SetFloat("Move", Input.GetAxisRaw("Horizontal"));
+            anim.SetBool("Moving", Input.GetAxisRaw("Horizontal") != 0f);
+        }
+
         if (Mind.player_has_control)
         {
             if (standing != null)
@@ -180,12 +189,17 @@ public class Player : MonoBehaviour
                     walking.flipX = Input.GetAxisRaw("Horizontal") < 0;
                 }
             }
-            
+
             if (anim != null)
             {
-                anim.SetFloat("Move", Input.GetAxisRaw("Horizontal"));
-                anim.SetBool("Moving", Input.GetAxisRaw("Horizontal") != 0f);
-                if (Input.GetAxisRaw("Horizontal") != 0) { walking.flipX = Input.GetAxisRaw("Horizontal") < 0; }
+                
+                if (Input.GetAxisRaw("Horizontal") != 0)
+                {
+                    Vector3 scalies = walking_png.localScale;
+                    if (0f > scalies.x) { scalies.x = scalies.x * -1f; }
+                    if (Input.GetAxisRaw("Horizontal") < 0) { scalies.x = scalies.x * -1f; }
+                    walking_png.localScale = scalies;
+                }
             }
 
             ladder_is_close = Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, ladder);
@@ -242,7 +256,7 @@ public class Player : MonoBehaviour
 
             drone.SetActive(checkpoint_time > 0f);
 
-            if (gained_abilities.Contains("Drone") && Input.GetKeyDown(KeyCode.Z))
+            if (gained_abilities.Contains("Drone") && Input.GetKeyDown(KeyCode.Z) && false)
             {
                 dashing = true;
                 my_col.enabled = true;
