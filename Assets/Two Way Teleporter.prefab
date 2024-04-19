@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5739157305575100864}
   - component: {fileID: 7381411457784239583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5769796813889191730}
   - component: {fileID: 9060020875734067709}
   - component: {fileID: 8525694058637449086}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Robot Interaction Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6822419112418350086}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46192a7d31959e94faafc88c2c28f602, type: 3}
   m_Name: 
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 8228683359164957325}
   - component: {fileID: 7427281943634987070}
   - component: {fileID: 4884310972862082331}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Robot Interaction Ring (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6957306678813874947}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46192a7d31959e94faafc88c2c28f602, type: 3}
   m_Name: 
@@ -343,7 +343,7 @@ Transform:
   - {fileID: 5294959083201049763}
   - {fileID: 5739157305575100864}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4226269250469931079
 MonoBehaviour:
@@ -377,7 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5294959083201049763}
   - component: {fileID: 8493832818913762038}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: A
   m_TagString: Untagged
   m_Icon: {fileID: 0}

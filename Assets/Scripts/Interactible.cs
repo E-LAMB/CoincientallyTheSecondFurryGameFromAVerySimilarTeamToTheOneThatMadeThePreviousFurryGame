@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Interactible : MonoBehaviour
 {
@@ -9,14 +10,12 @@ public class Interactible : MonoBehaviour
     public bool can_interact_with;
     public UnityEvent my_event;
 
-    // Start is called before the first frame update
-    void Start()
+    public void InteractionState(bool new_state)
     {
-        
+        can_interact_with = new_state;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }

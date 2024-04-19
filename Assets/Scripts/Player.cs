@@ -185,6 +185,7 @@ public class Player : MonoBehaviour
             {
                 anim.SetFloat("Move", Input.GetAxisRaw("Horizontal"));
                 anim.SetBool("Moving", Input.GetAxisRaw("Horizontal") != 0f);
+                if (Input.GetAxisRaw("Horizontal") != 0) { walking.flipX = Input.GetAxisRaw("Horizontal") < 0; }
             }
 
             ladder_is_close = Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, ladder);

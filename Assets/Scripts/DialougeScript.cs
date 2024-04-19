@@ -6,9 +6,19 @@ using UnityEngine.Events;
 public class DialougeScript : MonoBehaviour
 {
 
-    [Header("<#FFFFFF>    <b>- - - - - <u>Script Descriptions</u> - - - - -")]
+    [Header("<#FFFFFF>    <b>- - - - - <u>Script Commands</u> - - - - -")]
 
-    [Header("<#BBBBBB> /com dialouge start          - Starts the dialouge")]
+    [Header("<#BBBBBB> /start          - Starts the dialouge")]
+    [Header("<#BBBBBB> /end          - Starts the dialouge")]
+    [Header("<#BBBBBB> /enable          - Allows the player to progress dialouge")]
+    [Header("<#BBBBBB> /disable          - Stops the player from progressing dialouge")]
+    [Header("<#BBBBBB> /auto on          - Activates automation")]
+    [Header("<#BBBBBB> /auto off          - Deactivates automatio")]
+    [Header("<#BBBBBB> /name          - Sets the name")]
+    [Header("<#BBBBBB> /event 1          - Runs event 1")]
+    [Header("<#BBBBBB> /event 2          - Runs event 2")]
+    [Header("<#BBBBBB> /event 3          - Runs event 3")]
+    /*
     [Header("<#BBBBBB> /com dialouge end            - Ends the dialouge")]
     [Header("<#BBBBBB> /com player disable          - Disables the player's ability to move")]
     [Header("<#BBBBBB> /com player enable           - Enables the player's ability to move")]
@@ -19,12 +29,15 @@ public class DialougeScript : MonoBehaviour
     [Header("<#BBBBBB> /com run #                   - Runs the command in the indicated slot")]
     [Header("<#BBBBBB> /com auto enable            - Sets the icon to the indicated ID")]
     [Header("<#BBBBBB> /com auto disable           - Sets the icon's brightness to the indicated point")]
+    */
 
     [Header("")]
     [Header("<#FFFFFF>    <b>- - - - - <u>Script Content</u> - - - - -")]
     [Header("")]
 
     public string[] script_lines;
-    public Event[] script_events;
+    public UnityEvent event_1;
+    public UnityEvent event_2;
+    public UnityEvent event_3;
 
 }
