@@ -1,0 +1,465 @@
+fileFormatVersion: 2
+guid: 4c8ca42c3a48adf4aa72998aef6f44ed
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: elements trans_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 844
+        width: 205
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a80688ba8e4a7174ab3c21f0a79510de
+      internalID: -1494029822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elements trans_50
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 231
+        width: 608
+        height: 618
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27b6b6b8403f64647bc79d7b3c4e2e86
+      internalID: -144629106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elements trans_51
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 123
+        width: 84
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a83d260fcbf8e74c9cc29d1daecda90
+      internalID: 1012449667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elements trans_55
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 119
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8176c5ac6c50b344e8899c2644dff773
+      internalID: -1502030324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elements trans_59
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 116
+        width: 84
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3ee8289a91a17848bb3297bd550097f
+      internalID: -1834502803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elements trans_76
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 24
+        width: 87
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc08f36afc64b0843ae6d882bb9cb738
+      internalID: 874121471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elements trans_83
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 20
+        width: 91
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af1489ca014776c43a673aebf53836ed
+      internalID: 1608929562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elements trans_108
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 49
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890302ba9a3cd52409741f705e26ddab
+      internalID: 1128082444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elements trans_109
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 49
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f23bd39e856ee42947a76b528d0b96
+      internalID: -1228901727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elements trans_1
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 405
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016b86749aa94b2409bf7f359ad3c205
+      internalID: -198841279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      elements trans_0: -1494029822
+      elements trans_1: -198841279
+      elements trans_10: -1921421943
+      elements trans_100: 1643851183
+      elements trans_101: 929078365
+      elements trans_102: 1688645300
+      elements trans_103: -125020086
+      elements trans_104: 2017317017
+      elements trans_105: -811327679
+      elements trans_106: -2107941414
+      elements trans_107: -938035701
+      elements trans_108: 1128082444
+      elements trans_109: -1228901727
+      elements trans_11: -950932876
+      elements trans_110: -341721505
+      elements trans_111: -737386256
+      elements trans_112: 1575390921
+      elements trans_113: 2012213529
+      elements trans_114: 118842931
+      elements trans_115: 496092105
+      elements trans_116: 2046789851
+      elements trans_117: 663255172
+      elements trans_118: 520822283
+      elements trans_119: -382984549
+      elements trans_12: 478103874
+      elements trans_120: -1050361772
+      elements trans_121: -918997528
+      elements trans_122: -121516628
+      elements trans_123: -932047018
+      elements trans_124: -1818363701
+      elements trans_125: 466474553
+      elements trans_126: 1802493834
+      elements trans_127: -948039263
+      elements trans_13: 38799008
+      elements trans_14: -1560921399
+      elements trans_15: 1443054677
+      elements trans_16: 1713354505
+      elements trans_17: 647734701
+      elements trans_18: 1231905171
+      elements trans_19: 638215392
+      elements trans_2: 221587925
+      elements trans_20: -691016445
+      elements trans_21: -1603726605
+      elements trans_22: -1252178856
+      elements trans_23: -1674592665
+      elements trans_24: 1484606276
+      elements trans_25: -885429084
+      elements trans_26: -528203356
+      elements trans_27: -342343929
+      elements trans_28: -210926178
+      elements trans_29: -1541012129
+      elements trans_3: -606735258
+      elements trans_30: -635846259
+      elements trans_31: 939120970
+      elements trans_32: 407075562
+      elements trans_33: -261368829
+      elements trans_34: 1610891522
+      elements trans_35: 995397577
+      elements trans_36: 628612021
+      elements trans_37: 628214391
+      elements trans_38: 942896314
+      elements trans_39: 1505064945
+      elements trans_4: 745772874
+      elements trans_40: -98375389
+      elements trans_41: -1333834583
+      elements trans_42: -1860302781
+      elements trans_43: -378157932
+      elements trans_44: -396770994
+      elements trans_45: 905012432
+      elements trans_46: -1737492438
+      elements trans_47: 92446803
+      elements trans_48: 147448336
+      elements trans_49: -618590709
+      elements trans_5: -296960905
+      elements trans_50: -144629106
+      elements trans_51: 1012449667
+      elements trans_52: -664065852
+      elements trans_53: 1545754478
+      elements trans_54: 394247114
+      elements trans_55: -1502030324
+      elements trans_56: -1162427319
+      elements trans_57: -1354619315
+      elements trans_58: -1389829182
+      elements trans_59: -1834502803
+      elements trans_6: -1918358985
+      elements trans_60: -675337031
+      elements trans_61: 235122868
+      elements trans_62: -644720628
+      elements trans_63: -1697267152
+      elements trans_64: 1063794032
+      elements trans_65: 454663868
+      elements trans_66: -461211520
+      elements trans_67: 897520115
+      elements trans_68: 1352985523
+      elements trans_69: 790245874
+      elements trans_7: -510814332
+      elements trans_70: -909594031
+      elements trans_71: 1810003116
+      elements trans_72: -6952941
+      elements trans_73: 1926934880
+      elements trans_74: -990497200
+      elements trans_75: -1658995297
+      elements trans_76: 874121471
+      elements trans_77: -876194680
+      elements trans_78: -475322513
+      elements trans_79: -1119581975
+      elements trans_8: -1858224272
+      elements trans_80: 364427550
+      elements trans_81: -929398684
+      elements trans_82: -207561029
+      elements trans_83: 1608929562
+      elements trans_84: 1425919548
+      elements trans_85: -1119223715
+      elements trans_86: -926843502
+      elements trans_87: 626799839
+      elements trans_88: 44954774
+      elements trans_89: 429462381
+      elements trans_9: -1245881380
+      elements trans_90: -1367535526
+      elements trans_91: 965055914
+      elements trans_92: -17220423
+      elements trans_93: -295455327
+      elements trans_94: -916710415
+      elements trans_95: 597323197
+      elements trans_96: 505245819
+      elements trans_97: -243115076
+      elements trans_98: 1166128975
+      elements trans_99: 2004914045
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
