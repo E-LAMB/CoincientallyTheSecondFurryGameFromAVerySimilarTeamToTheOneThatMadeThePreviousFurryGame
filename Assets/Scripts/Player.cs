@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using Unity.Jobs.LowLevel.Unsafe;
 using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
@@ -14,6 +13,8 @@ public class Player : MonoBehaviour
     public float maxspeed;
     public float climbingspeed;
     public Vector2 dashing_speed;
+
+    public float exit_time;
 
     public GameObject groundchecker;
     public LayerMask ground;
@@ -166,6 +167,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (exit_time > 10f)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        } else
+        {
+            if (Input.GetKey(KeyCode.Alpha5))
+            {
+                exit_time += Time.deltaTime;
+            }
+        }
+
         if (anim != null)
         {
             anim.SetFloat("Move", Input.GetAxisRaw("Horizontal"));
