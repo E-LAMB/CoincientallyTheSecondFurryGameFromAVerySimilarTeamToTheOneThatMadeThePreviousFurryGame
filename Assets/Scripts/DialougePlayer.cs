@@ -24,11 +24,18 @@ public class DialougePlayer : MonoBehaviour
 
     public TextMeshProUGUI text_name;
 
+    public TextMeshProUGUI choiceA;
+    public TextMeshProUGUI choiceB;
+
     public bool force_progress;
 
     public UnityEvent stolen1;
     public UnityEvent stolen2;
     public UnityEvent stolen3;
+
+    public GameObject choice_buttons;
+
+    public float auto_cooldown;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +57,13 @@ public class DialougePlayer : MonoBehaviour
         stolen3 = input.event_3;
 
         current_option = 0;
+        ProcessLine();
+    }
+
+    public void ChoiceMade()
+    {
+        can_progress = true;
+        choice_buttons.SetActive(false);
         ProcessLine();
     }
 
@@ -149,9 +163,20 @@ public class DialougePlayer : MonoBehaviour
             {
                 stolen3.Invoke();
             }
+            else if (stolen_lines[current_option] == "/choice")
+            {
+                choice_buttons.SetActive(true);
+                can_progress = false;
+                force_progress = false;
+                current_option++;
+                choiceA.text = stolen_lines[current_option];
+                current_option++;
+                choiceB.text = stolen_lines[current_option];
+            }
             else if (stolen_lines[current_option] == "temp")
             {
                 // temp
+                Debug.Log("Temp");
             }
 
 
@@ -167,13 +192,18 @@ public class DialougePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(progression_key) && can_progress) 
+        if (Input.GetKeyDown(progression_key) && can_progress && !automated_progression) 
         {
             ProcessLine();
         }
         if (automated_progression)
         {
-            ProcessLine();
+            auto_cooldown -= Time.deltaTime;
+            if (0f > auto_cooldown)
+            {
+                auto_cooldown = 0.1f;
+                ProcessLine();
+            }
         }
         if (force_progress)
         {

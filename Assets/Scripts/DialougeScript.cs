@@ -13,11 +13,12 @@ public class DialougeScript : MonoBehaviour
     [Header("<#BBBBBB> /enable          - Allows the player to progress dialouge")]
     [Header("<#BBBBBB> /disable          - Stops the player from progressing dialouge")]
     [Header("<#BBBBBB> /auto on          - Activates automation")]
-    [Header("<#BBBBBB> /auto off          - Deactivates automatio")]
+    [Header("<#BBBBBB> /auto off          - Deactivates automation")]
     [Header("<#BBBBBB> /name          - Sets the name")]
     [Header("<#BBBBBB> /event 1          - Runs event 1")]
     [Header("<#BBBBBB> /event 2          - Runs event 2")]
     [Header("<#BBBBBB> /event 3          - Runs event 3")]
+    [Header("<#BBBBBB> /choice          - Presents two choices")]
     /*
     [Header("<#BBBBBB> /com dialouge end            - Ends the dialouge")]
     [Header("<#BBBBBB> /com player disable          - Disables the player's ability to move")]

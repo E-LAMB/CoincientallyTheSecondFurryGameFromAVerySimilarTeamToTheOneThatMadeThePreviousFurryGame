@@ -56,12 +56,17 @@ public class CursorControl : MonoBehaviour
             cursor_trans.position = main_cam.ScreenToWorldPoint(Input.mousePosition);
             cursor_trans.position = cursor_trans.position - new Vector3(0f, 0f, cursor_trans.position.z);
 
+            all_ints = Object.FindObjectsOfType<Interactible>();
+
             for (int i = 0; i < all_ints.Length; i++)
             {
                 if (Vector3.Distance(all_ints[i].transform.position, cursor_trans.position) < distance)
                 {
-                    closest_interactible = all_ints[i];
-                    distance = Vector3.Distance(all_ints[i].transform.position, cursor_trans.position);
+                    if (all_ints[i].isActiveAndEnabled)
+                    {
+                        closest_interactible = all_ints[i];
+                        distance = Vector3.Distance(all_ints[i].transform.position, cursor_trans.position);
+                    }
                 }
             }
 
@@ -85,7 +90,6 @@ public class CursorControl : MonoBehaviour
                         if (Input.GetKeyDown(KeyCode.Mouse0))
                         {
                             closest_interactible.my_event.Invoke();
-                            all_ints = Object.FindObjectsOfType<Interactible>();
                         }
 
                     }
