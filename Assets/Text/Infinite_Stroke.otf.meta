@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3b0dd5ac35fd5064c924c5b7c59e57ba
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Infinite Stroke
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 68eb24dde47d50d47b6e2402c4416a3c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
