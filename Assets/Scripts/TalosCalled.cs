@@ -6,14 +6,13 @@ using TMPro;
 public class TalosCalled : MonoBehaviour
 {
 
-    public TextMeshProUGUI[] objectives;
-    public string[] descriptions;
+    public TextMeshProUGUI objective;
+    public Animator anim;
 
-
-
-    public void NewTask()
+    public void NewTask(string new_objective)
     {
-
+        objective.text = new_objective; 
+        anim.SetTrigger("PlayObjective");
     }
 
     public void ClearTask()
