@@ -16,13 +16,16 @@ public class DialougePlayer : MonoBehaviour
     public bool can_progress;
     public bool automated_progression;
 
-    public TextMeshProUGUI my_text;
+    public Text my_text;
     public GameObject all_dialouge;
 
-    public Sprite[] all_sprites;
-    public Image sprite_image;
+    public Texture[] all_sprites;
+    public Font[] all_fonts;
+    public Texture[] all_boxes;
 
-    public TextMeshProUGUI text_name;
+    public RawImage sprite_image;
+
+    public Text text_name;
 
     public TextMeshProUGUI choiceA;
     public TextMeshProUGUI choiceB;
@@ -170,6 +173,26 @@ public class DialougePlayer : MonoBehaviour
             {
                 stolen3.Invoke();
             }
+
+            else if (stolen_lines[current_option] == "/sprite")
+            {
+                current_option++;
+                int temp_int = int.Parse(stolen_lines[current_option]);
+                sprite_image.texture = all_sprites[temp_int];
+            }
+            else if (stolen_lines[current_option] == "/font")
+            {
+                current_option++;
+                int temp_int = int.Parse(stolen_lines[current_option]);
+                my_text.font = all_fonts[temp_int];
+            }
+            else if (stolen_lines[current_option] == "/color")
+            {
+                current_option++;
+                int temp_int = int.Parse(stolen_lines[current_option]);
+                sprite_image.texture = all_sprites[temp_int];
+            }
+
             else if (stolen_lines[current_option] == "/choice")
             {
                 choice_buttons.SetActive(true);
@@ -199,7 +222,7 @@ public class DialougePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(progression_key) && can_progress && !automated_progression) 
+        if ((Input.GetKeyDown(progression_key) || Input.GetMouseButtonDown(0)) && can_progress && !automated_progression) 
         {
             ProcessLine();
         }
