@@ -19,6 +19,7 @@ public class DialougeScript : MonoBehaviour
     [Header("<#BBBBBB> /event 2          - Runs event 2")]
     [Header("<#BBBBBB> /event 3          - Runs event 3")]
     [Header("<#BBBBBB> /choice          - Presents two choices")]
+    [Header("<#BBBBBB> /newob          - Presents two choices")]
     /*
     [Header("<#BBBBBB> /com dialouge end            - Ends the dialouge")]
     [Header("<#BBBBBB> /com player disable          - Disables the player's ability to move")]

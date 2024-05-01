@@ -37,6 +37,8 @@ public class DialougePlayer : MonoBehaviour
 
     public float auto_cooldown;
 
+    public TalosCalled talos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -150,6 +152,11 @@ public class DialougePlayer : MonoBehaviour
             {
                 current_option++;
                 text_name.text = stolen_lines[current_option];
+            }
+            else if (stolen_lines[current_option] == "/newob")
+            {
+                current_option++;
+                talos.NewTask(stolen_lines[current_option]);
             }
             else if (stolen_lines[current_option] == "/event 1")
             {
