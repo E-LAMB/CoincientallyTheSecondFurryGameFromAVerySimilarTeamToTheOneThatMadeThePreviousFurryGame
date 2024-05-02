@@ -19,11 +19,11 @@ public class DialougePlayer : MonoBehaviour
     public Text my_text;
     public GameObject all_dialouge;
 
-    public Texture[] all_sprites;
-    public Font[] all_fonts;
-    public Texture[] all_boxes;
+    public SpeakerProfile[] all_profiles;
 
     public RawImage sprite_image;
+    public RawImage sprite_border;
+    public RawImage dialouge_border;
 
     public Text text_name;
 
@@ -70,6 +70,14 @@ public class DialougePlayer : MonoBehaviour
         can_progress = true;
         choice_buttons.SetActive(false);
         ProcessLine();
+    }
+
+    public void ChangeSpeaker(string insert)
+    {
+        if (insert == "/speaker twig")
+        {
+
+        } 
     }
 
     public void ProcessLine()
@@ -174,23 +182,10 @@ public class DialougePlayer : MonoBehaviour
                 stolen3.Invoke();
             }
 
-            else if (stolen_lines[current_option] == "/sprite")
+            else if (stolen_lines[current_option].Contains("/speaker"))
             {
-                current_option++;
-                int temp_int = int.Parse(stolen_lines[current_option]);
-                sprite_image.texture = all_sprites[temp_int];
-            }
-            else if (stolen_lines[current_option] == "/font")
-            {
-                current_option++;
-                int temp_int = int.Parse(stolen_lines[current_option]);
-                my_text.font = all_fonts[temp_int];
-            }
-            else if (stolen_lines[current_option] == "/color")
-            {
-                current_option++;
-                int temp_int = int.Parse(stolen_lines[current_option]);
-                sprite_image.texture = all_sprites[temp_int];
+                // current_option++;
+                ChangeSpeaker(stolen_lines[current_option]);
             }
 
             else if (stolen_lines[current_option] == "/choice")
