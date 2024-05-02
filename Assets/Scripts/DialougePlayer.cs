@@ -27,8 +27,8 @@ public class DialougePlayer : MonoBehaviour
 
     public Text text_name;
 
-    public TextMeshProUGUI choiceA;
-    public TextMeshProUGUI choiceB;
+    public Text choiceA;
+    public Text choiceB;
 
     public bool force_progress;
 
@@ -76,7 +76,7 @@ public class DialougePlayer : MonoBehaviour
     {
         for (int x = 0; x < all_profiles.Length; x++)
         {
-            if (("/speaker " + all_profiles[x].name) == insert)
+            if (("/speaker " + all_profiles[x].name.ToLower()) == insert.ToLower())
             {
                 // border portrait colors
                 // text color
@@ -174,6 +174,11 @@ public class DialougePlayer : MonoBehaviour
             {
                 current_option++;
                 text_name.text = stolen_lines[current_option];
+            }
+            else if (stolen_lines[current_option] == "/pass")
+            {
+                current_option++;
+                my_text.text = stolen_lines[current_option];
             }
             else if (stolen_lines[current_option] == "/newob")
             {
