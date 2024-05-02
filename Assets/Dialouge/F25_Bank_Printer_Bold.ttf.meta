@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 88007808a0dfd1943a8c66cd6c53732a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - F25 Bank Printer
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 720f925d57456b5458a9b355d714c99c, type: 3}
+  - {fileID: 12800000, guid: 4080ce9896e748646ace2343617e7b3b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -74,10 +74,21 @@ public class DialougePlayer : MonoBehaviour
 
     public void ChangeSpeaker(string insert)
     {
-        if (insert == "/speaker twig")
+        for (int x = 0; x < all_profiles.Length; x++)
         {
+            if (("/speaker " + all_profiles[x].name) == insert)
+            {
+                // border portrait colors
+                // text color
+                // sprite change
 
-        } 
+                dialouge_border.color = all_profiles[x].speaker_color;
+                sprite_border.color = all_profiles[x].speaker_color;
+                my_text.color = all_profiles[x].speaker_color;
+                my_text.font = all_profiles[x].speaker_font;
+                sprite_image.texture = all_profiles[x].speaker_portrait;
+            }
+        }
     }
 
     public void ProcessLine()
