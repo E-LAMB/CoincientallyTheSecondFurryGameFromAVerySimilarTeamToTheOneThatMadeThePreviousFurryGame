@@ -15,6 +15,7 @@ public class CursorControl : MonoBehaviour
     public Camera main_cam;
 
     public SpriteRenderer cursor_sprite;
+    public Player my_player;
 
     public Sprite sprite_point;
     public Sprite sprite_cross;
@@ -30,6 +31,8 @@ public class CursorControl : MonoBehaviour
     public float hide_cursor;
 
     public bool taking_photo;
+
+    public Animator cam_flash;
 
     // Start is called before the first frame update
     void Start()
@@ -152,6 +155,8 @@ public class CursorControl : MonoBehaviour
                         {
                             closest_photo.Capture();
                             nearby_photo_ops = Object.FindObjectsOfType<PhotoOp>();
+                            cam_flash.SetTrigger("FlashCamera");
+                            my_player.Button_Camera();
                         }
                     }
                 }
