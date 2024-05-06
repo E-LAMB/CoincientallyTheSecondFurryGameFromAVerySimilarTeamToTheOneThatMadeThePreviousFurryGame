@@ -38,6 +38,9 @@ public class DialougePlayer : MonoBehaviour
 
     public GameObject choice_buttons;
 
+    public GameObject special_textbox;
+    public InputField special_input;
+
     public float auto_cooldown;
 
     public TalosCalled talos;
@@ -70,6 +73,28 @@ public class DialougePlayer : MonoBehaviour
         can_progress = true;
         choice_buttons.SetActive(false);
         ProcessLine();
+    }
+
+    public void DecidedSpecial()
+    {
+        can_progress = true;
+        special_textbox.SetActive(false);
+        ChangeSpeaker("/speaker Twig");
+        
+        if (special_input.text == "Mr Robot")
+        {
+            stolen_lines[current_option] = "(Actually that's a really good idea for a name... Very creative of you!)";
+            stolen_lines[current_option + 1] = "(You give a big smile as confetti flies in your mind, Well done Twig!)";
+            my_text.text = "(Actually that's a really good idea for a name... Very creative of you!)";
+        } else
+        {
+            stolen_lines[current_option] = "(You realise the name you chose was really uncreative)";
+            stolen_lines[current_option + 1] = "(You decide to pick something much more imaginative)";
+            my_text.text = "(You realise the name you chose was really uncreative)";
+        }
+
+        ProcessLine();
+
     }
 
     public void ChangeSpeaker(string insert)
@@ -213,6 +238,12 @@ public class DialougePlayer : MonoBehaviour
                 choiceA.text = stolen_lines[current_option];
                 current_option++;
                 choiceB.text = stolen_lines[current_option];
+            }
+            else if (stolen_lines[current_option] == "/special choice")
+            {
+                special_textbox.SetActive(true);
+                can_progress = false;
+                force_progress = false;
             }
             else if (stolen_lines[current_option] == "temp")
             {
