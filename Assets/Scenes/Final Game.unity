@@ -19670,9 +19670,11 @@ MonoBehaviour:
   - /start
   - /enable
   - /speaker Post
-  - Are you going to put me in that journal of yours?
-  - I don't think I'd be that impressive of a specimen...
-  - What would you even write for me?
+  - '[Optical Systems Recalibrating]'
+  - Twig! You were meant to photograph the Dandemole! Not me!
+  - What, Are you going to put me in that journal of yours?
+  - I don't think I'd even be that impressive of a specimen. What would you even
+    write for me?
   - /choice
   - '"This is a post. It is good at being a post."'
   - '"Very smart, Very pretty, Very posty"'
@@ -19760,32 +19762,37 @@ MonoBehaviour:
   - /enable
   - /speaker post
   - Twig!
-  - Twig, It's you! You're back! It's been forever! How have you been? Where have
-    you been?
-  - I've been... Well I've been pretty bored. I'm sure you can imagine life as a
-    post isn't very interesting... or fun...
+  - Twig, It's you! You're back! It's been forever! Where were you? What were you
+    up to?
+  - Tell me everything please! Everything! It's really boring being a post... I think
+    I might be going slightly insane... Maybe...
   - /choice
   - At least your feet don't get all muddy!
   - I mean, You could be a doorstop?
-  - I guess...
+  - You do make a good point...
   - /speaker twig
   - ...
-  - Well I'll be going now- I need to go find some parts for this cool robot I found.
-  - I don't have any voiceboxes in my house, So I'm going to look around.
   - /speaker post
-  - No! Please don't go! Uhh... Life gets really boring! And if you need a voicebox...
-  - Well I'm sure you can guess life on a post is lonely, All I do is look around.
-  - But there's this dandemole - It's behind you right now! And it makes me happy
-    when I see it!
-  - Could you take a photo of me? That way when it leaves, I'll still have it's company...
-  - I'd be willing to part with my voicebox for a photo - Just a single photo, please!
+  - ...
   - /speaker twig
-  - Ok, One photo of a dandemole coming right up! Let me just-
-  - Oh! I forgot my camera! I must've left it in my garden yesterday! I should get
-    them, My garden is just past my house.
+  - Well I'll be going now- I need to find some parts to fix my robot at home...
+    I'm looking for a voicebox but can't find one.
+  - /speaker post
+  - No! Please don't go! Uhh... I have an idea! Yes, Yes - An amazing idea! I'll
+    give you mine! If you could help me first...
+  - You see, I get very bored and lonely - But I love it when the little critters
+    come running about! Especially that dandemole over there!
+  - So cute, So fluffy! But I miss it so much when it leaves - Could take a photo
+    of it for me? Please Please Please!
+  - /speaker twig
+  - 'Ok Ok! I''ll snap a lovely photo for you right about... '
+  - AAAH!
+  - I forgot my camera! I must've left it in my garden yesterday! How silly of me...
+  - Right, I just need to walk past my house and find my camera in my garden. Then
+    take a photo. Easy!
   - /event 1
   - /newob
-  - Find your camera
+  - Get your camera
   - /end
   event_1:
     m_PersistentCalls:
@@ -21185,18 +21192,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 806402086}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 155063240}
         m_TargetAssemblyTypeName: DialougePlayer, Assembly-CSharp
         m_MethodName: StealFrom
@@ -21204,6 +21199,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 806402090}
           m_ObjectArgumentAssemblyTypeName: DialougeScript, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 806402086}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 806402090}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -21225,12 +21232,12 @@ MonoBehaviour:
   - /start
   - /enable
   - /speaker Twig
-  - Awesome! I'll write some knowledge about it down in my journal. I can access
-    it whenever I need to.
+  - Awesome! I'll write down some knowledge about it. I can read about it in my journal
+    at any time.
   - Too bad it flew away... The flash must've scared it. Poor chick.
   - 'Ok, Let''s get that photo of that Dandemole. '
   - /newob
-  - Photo the Dandemole
+  - Photograph the Dandemole
   - /end
   - 
   - 
@@ -47169,7 +47176,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Give the photo to the robot
+          m_StringArgument: Talk to the post
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!212 &1795578017
@@ -53738,11 +53745,18 @@ MonoBehaviour:
   - /start
   - /enable
   - /speaker post
-  - Oh thank you so much! Thank you- Thank you! Thank you so much!
-  - Here Here - Take it! Take my voicebox, Thank you so much!
+  - Oh thank you so much! Thank you- Thank you! Thank you so much! This means so
+    much to me!
+  - Now I can talk to this photo when I don't have any living things to talk to...
   - /speaker Twig
-  - (The voicebox pops out of it's mouth)
-  - Right, Let's fix my robot.
+  - ...
+  - /speaker post
+  - Oh right - That voicebox. Yes - Yes, I'll make good on my side!
+  - (The voicebox pops out of it's mouth and lands neatly in your fluffy little hands)
+  - /speaker twig
+  - Thanks! Enjoy your photo!
+  - /speaker post
+  - '###, # ####!'
   - /newob
   - Fix your robot
   - /event 1
@@ -53803,7 +53817,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050774562}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46192a7d31959e94faafc88c2c28f602, type: 3}
   m_Name: 
@@ -53834,7 +53848,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!212 &2050774565
 SpriteRenderer:
@@ -56294,14 +56308,16 @@ MonoBehaviour:
   - /start
   - /enable
   - /speaker Robot
-  - (It's voice is all staticky and garbled)
-  - '###? ###!'
-  - '##### #### ##!'
-  - (It seems the robot's voicebox is broken)
-  - (The robot needs to be fixed)
+  - (The robot's voice seems to be all over the place)
+  - '#####? #####!'
+  - '#### ##### ##?'
   - '####!'
   - /speaker Twig
-  - I don't have the parts to fix it's voicebox here... I should go outside.
+  - I think your voicebox is broken... I'd fix it, But I don't think I have any spare
+    ones in here.
+  - Hmm... I'll be back soon! Don't go any... where...
+  - /speaker Robot
+  - '####...'
   - /event 1
   - /newob
   - Search for parts outside
