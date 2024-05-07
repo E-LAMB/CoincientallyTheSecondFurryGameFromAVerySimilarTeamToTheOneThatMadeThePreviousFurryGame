@@ -84,7 +84,7 @@ public class DialougePlayer : MonoBehaviour
         if (special_input.text == "Mr Robot")
         {
             stolen_lines[current_option] = "(Actually that's a really good idea for a name... Very creative of you!)";
-            stolen_lines[current_option + 1] = "(You give a big smile as confetti flies in your mind, Well done Twig!)";
+            stolen_lines[current_option + 1] = "(Well done Twig! You're so smart! So awesome!)";
             my_text.text = "(Actually that's a really good idea for a name... Very creative of you!)";
         } else
         {
