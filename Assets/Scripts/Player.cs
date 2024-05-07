@@ -185,6 +185,15 @@ public class Player : MonoBehaviour
             anim.SetBool("Moving", Input.GetAxisRaw("Horizontal") != 0f);
         }
 
+        if (!Mind.player_has_control)
+        {
+            if (anim != null)
+            {
+                anim.SetFloat("Move", 0f);
+                anim.SetBool("Moving", false);
+            }
+        }
+
         if (Mind.player_has_control)
         {
             if (standing != null)

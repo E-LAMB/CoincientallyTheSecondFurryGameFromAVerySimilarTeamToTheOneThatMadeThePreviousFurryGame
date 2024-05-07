@@ -16,6 +16,8 @@ public class DialougePlayer : MonoBehaviour
     public bool can_progress;
     public bool automated_progression;
 
+    public static bool in_dialouge;
+
     public Text my_text;
     public GameObject all_dialouge;
 
@@ -48,7 +50,7 @@ public class DialougePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public void StealFrom(DialougeScript input)
@@ -80,7 +82,7 @@ public class DialougePlayer : MonoBehaviour
         can_progress = true;
         special_textbox.SetActive(false);
         ChangeSpeaker("/speaker Twig");
-        
+
         if (special_input.text == "Mr Robot")
         {
             stolen_lines[current_option] = "(Actually that's a really good idea for a name... Very creative of you!)";
@@ -95,6 +97,14 @@ public class DialougePlayer : MonoBehaviour
 
         ProcessLine();
 
+    }
+
+    public void AdvanceClick()
+    {
+        if (can_progress && !automated_progression)
+        {
+            ProcessLine();
+        }
     }
 
     public void ChangeSpeaker(string insert)
@@ -173,11 +183,13 @@ public class DialougePlayer : MonoBehaviour
             {
                 all_dialouge.SetActive(true);
                 Mind.player_has_control = false;
+                in_dialouge = true;
             }
             else if (stolen_lines[current_option] == "/end")
             {
                 all_dialouge.SetActive(false);
                 Mind.player_has_control = true;
+                in_dialouge = false;
             }
             else if (stolen_lines[current_option] == "/disable")
             {
@@ -264,7 +276,8 @@ public class DialougePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(progression_key) || Input.GetMouseButtonDown(0)) && can_progress && !automated_progression) 
+        //if ((Input.GetKeyDown(progression_key) || Input.GetMouseButtonDown(0)) && can_progress && !automated_progression)
+        if ((Input.GetKeyDown(progression_key)) && can_progress && !automated_progression)
         {
             ProcessLine();
         }
