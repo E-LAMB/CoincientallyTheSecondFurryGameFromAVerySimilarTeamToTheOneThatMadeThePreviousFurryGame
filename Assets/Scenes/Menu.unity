@@ -483,7 +483,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Continue
+  m_Text: THIS TEXT MEANS YOU DID IT RIGHT AIDAN!!
 --- !u!222 &636701161
 CanvasRenderer:
   m_ObjectHideFlags: 0
