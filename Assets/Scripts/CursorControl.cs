@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CursorControl : MonoBehaviour
 {
@@ -56,6 +57,7 @@ public class CursorControl : MonoBehaviour
         {
 
             distance = 99999f;
+
             cursor_trans.position = main_cam.ScreenToWorldPoint(Input.mousePosition);
             cursor_trans.position = cursor_trans.position - new Vector3(0f, 0f, cursor_trans.position.z);
 

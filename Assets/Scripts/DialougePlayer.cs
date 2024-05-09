@@ -217,11 +217,27 @@ public class DialougePlayer : MonoBehaviour
                 current_option++;
                 my_text.text = stolen_lines[current_option];
             }
+
             else if (stolen_lines[current_option] == "/newob")
             {
                 current_option++;
                 talos.NewTask(stolen_lines[current_option]);
             }
+            else if (stolen_lines[current_option] == "/clearob")
+            {
+                current_option++;
+                talos.ClearTask(stolen_lines[current_option]);
+            }
+            else if (stolen_lines[current_option] == "/stackob")
+            {
+                current_option++;
+                talos.StackObjective(stolen_lines[current_option]);
+            }
+            else if (stolen_lines[current_option] == "/removeob")
+            {
+                talos.ClearAllTasks();
+            }
+
             else if (stolen_lines[current_option] == "/event 1")
             {
                 stolen1.Invoke();

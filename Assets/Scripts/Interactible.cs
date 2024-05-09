@@ -12,11 +12,10 @@ public class Interactible : MonoBehaviour
 
     public void InteractionState(bool new_state)
     {
-        can_interact_with = new_state;
+        if (Mind.player_has_control)
+        {
+            can_interact_with = new_state;
+        }
     }
 
-    private void Update()
-    {
-        
-    }
 }
