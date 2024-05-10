@@ -49,7 +49,8 @@ public class TalosCalled : MonoBehaviour
 
     public void NewTask(string new_objective)
     {
-        objective.text = new_objective; 
+        objective.text = new_objective;
+        my_objectives[0] = new_objective;
         anim.SetTrigger("PlayObjective");
         LocateTask(new_objective);
     }
