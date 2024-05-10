@@ -12,10 +12,12 @@ public class Interactible : MonoBehaviour
 
     public void InteractionState(bool new_state)
     {
-        if (Mind.player_has_control)
+        /*
+        if (Mind.player_has_control && !DialougePlayer.in_dialouge)
         {
-            can_interact_with = new_state;
-        }
+        */
+        can_interact_with = new_state;
+
     }
 
 }

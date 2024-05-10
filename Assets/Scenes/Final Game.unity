@@ -593,7 +593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19853012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: -61.934, z: 6}
+  m_LocalPosition: {x: -3.75, y: -61.61, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -628,7 +628,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 604767544}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -652,7 +652,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1658609544}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -736,8 +736,8 @@ MonoBehaviour:
     clicking on it
   - /newob
   - Photo the Baby Buck
-  - /event 1
   - /end
+  - /event 1
   - 
   - 
   - 
@@ -8204,8 +8204,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285868658}
   m_LocalRotation: {x: -0, y: -0, z: 0.632406, w: 0.7746371}
-  m_LocalPosition: {x: 0.54699993, y: 0.12799835, z: -1}
-  m_LocalScale: {x: 0.13821971, y: 0.13821971, z: 0.13821971}
+  m_LocalPosition: {x: 0.402, y: 0.098, z: -1}
+  m_LocalScale: {x: 0.101568, y: 0.101568, z: 0.101568}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 19853013}
@@ -14206,8 +14206,7 @@ MonoBehaviour:
   script_lines:
   - /start
   - /enable
-  - /name
-  - Door Sign
+  - /speaker Twig
   - (It's a sign)
   - (I wrote it myself)
   - (It says as follows)
@@ -21970,8 +21969,7 @@ MonoBehaviour:
   script_lines:
   - /start
   - /enable
-  - /name
-  - Directional Sign
+  - /speaker Twig
   - (It's a sign)
   - (There's things written on the sign)
   - (You read the things that are written on the sign)
@@ -22423,7 +22421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806402086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.432, y: -59.086, z: 4}
+  m_LocalPosition: {x: 3.377, y: -58.655, z: 4}
   m_LocalScale: {x: 0.03657, y: 0.03657, z: 0.03657}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25007,14 +25005,11 @@ MonoBehaviour:
   script_lines:
   - /start
   - /enable
-  - /name
-  - Sign
+  - /speaker Twig
   - (It's a sign)
   - (What's on the sign?)
   - (It doesn't say much)
   - (Maybe that makes it a mystery sign?)
-  - /name
-  - Mystery Sign
   - (Yes this is a mysterious sign indeed)
   - (...)
   - (Actually I think it's just a normal sign)
@@ -25433,6 +25428,7 @@ MonoBehaviour:
   - 
   - 
   talos_animating: 0
+  tasks_here: 0
   visibility: {fileID: 1990698518}
 --- !u!1 &906821330
 GameObject:
@@ -25671,11 +25667,14 @@ MonoBehaviour:
   - /enable
   - /speaker Actor
   - Nice going Costar!
-  - Nice going
   - I think you can use that thing if you-
+  - /speaker Twig
   - (You put it on your head)
+  - It fits nicely on my head
+  - /speaker Actor
   - No that's not a hat
   - Wrap it around your waist
+  - /speaker Twig
   - (It makes for a lovely hat)
   - /newob
   - Cross the pit
@@ -26977,12 +26976,9 @@ MonoBehaviour:
   script_lines:
   - /start
   - /enable
-  - /name
-  - Severed Head
+  - /speaker Actor
   - Oh the log fell down
-  - We can use that thing we got
-  - (You adjust your hat)
-  - its not a hat >:(
+  - We can use that thing we got to cross the gap
   - /newob
   - Left Shift to dash
   - /end
@@ -33268,8 +33264,7 @@ MonoBehaviour:
   - /start
   - /event 1
   - /enable
-  - /name
-  - Severed Head
+  - /speaker Actor
   - Great! We've got the key now!
   - But did you see that gap earlier?
   - There's no way we'll be able to get across that
@@ -38555,7 +38550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377051406}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.84, y: -8.3, z: 0}
+  m_LocalPosition: {x: 4.79, y: -9.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -40426,12 +40421,14 @@ MonoBehaviour:
   - I want eyes. I need eyes. Give me. Your. Eyes. Please.
   - O _ o
   - My... Eyes?
-  - I suppose I do owe you one... Ok! Here you go!
+  - 'I suppose I do owe you one... '
   - /removeob
   - /stackob
   - Repair Mr Robot
   - /stackob
   - Explore the ruins
+  - /newob
+  - Complete playtester form
   - /event 2
   - /end
   event_1:
@@ -45332,14 +45329,14 @@ MonoBehaviour:
   script_lines:
   - /start
   - /enable
-  - /name
-  - Sign
+  - /speaker Twig
   - (It's a sign)
   - (It's a fourth wall breaking sign)
   - (It says)
   - '"There''s no area over here"'
-  - '"Since this is a demo, This area''s not complete"'
-  - '"But you can still head back home and fix your robot!"'
+  - '"So why not do the form?"'
+  - '"If you don''t Killian will personally break into your home and stab you 28
+    times"'
   - (It's weirdly bossy for a sign)
   - /event 1
   - /end
@@ -45349,6 +45346,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1968335709}
         m_TargetAssemblyTypeName: Interactible, Assembly-CSharp
         m_MethodName: InteractionState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1664700773}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46230,6 +46239,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658609544}
   m_CullTransparentMesh: 1
+--- !u!1 &1664700773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1664700775}
+  - component: {fileID: 1664700774}
+  m_Layer: 0
+  m_Name: ad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1664700774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664700773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d50ebd22540b6947804151111a1a6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameend: 2
+--- !u!4 &1664700775
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664700773}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.96, y: 81, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1968335710}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1665891729
 GameObject:
   m_ObjectHideFlags: 0
@@ -55120,6 +55174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1664700775}
   - {fileID: 1624179202}
   m_Father: {fileID: 0}
   m_RootOrder: 22
@@ -58991,6 +59046,18 @@ MonoBehaviour:
       - m_Target: {fileID: 741018560}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1746236855}
+        m_TargetAssemblyTypeName: Interactible, Assembly-CSharp
+        m_MethodName: InteractionState
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

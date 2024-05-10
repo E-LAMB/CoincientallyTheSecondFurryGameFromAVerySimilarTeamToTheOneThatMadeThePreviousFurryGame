@@ -12,6 +12,7 @@ public class TalosCalled : MonoBehaviour
     public int target_slot;
     public string[] my_objectives;
     public bool talos_animating;
+    public int tasks_here;
 
     public GameObject visibility;
 
@@ -43,6 +44,7 @@ public class TalosCalled : MonoBehaviour
             }
 
         }
+        CountTasks();
     }
 
     public void TalosStartAnim() { talos_animating = true; } public void TalosFinishAnim() { talos_animating = false; }
@@ -53,6 +55,7 @@ public class TalosCalled : MonoBehaviour
         my_objectives[0] = new_objective;
         anim.SetTrigger("PlayObjective");
         LocateTask(new_objective);
+        CountTasks();
     }
 
     public void StackObjective(string new_objective)
@@ -69,6 +72,7 @@ public class TalosCalled : MonoBehaviour
                 LocateTask(new_objective);
             }
         }
+        CountTasks();
     }
 
     public void LocateTask()
@@ -83,6 +87,7 @@ public class TalosCalled : MonoBehaviour
             }
         }
         visibility.SetActive(target_slot != -25);
+        CountTasks();
     }
 
     public void LocateTask(string new_objective)
@@ -97,6 +102,7 @@ public class TalosCalled : MonoBehaviour
             }
         }
         visibility.SetActive(target_slot != -25);
+        CountTasks();
     }
 
     public void ClearTask(string new_objective)
@@ -109,6 +115,7 @@ public class TalosCalled : MonoBehaviour
             }
             LocateTask();
         }
+        CountTasks();
     }
 
     public void ClearAllTasks()
@@ -117,17 +124,33 @@ public class TalosCalled : MonoBehaviour
         {
             my_objectives[a] = "";
         }
+        CountTasks();
+    }
+
+    public int CountTasks()
+    {
+        tasks_here = 0;
+
+        for (int a = 0; a < my_objectives.Length; a++)
+        {
+            if (my_objectives[a] != "")
+            {
+                tasks_here += 1;
+            }
+        }
+
+        return tasks_here;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        CountTasks();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        visibility.SetActive(tasks_here > 1);
     }
 }

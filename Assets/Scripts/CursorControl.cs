@@ -84,7 +84,7 @@ public class CursorControl : MonoBehaviour
             distance_point.z = cursor_trans.position.z;
             distance = Vector3.Distance(distance_point, cursor_trans.position);
 
-            if (distance < hide_cursor)
+            if (distance < hide_cursor && !DialougePlayer.in_dialouge && Mind.player_has_control)
             {
                 if (distance < distance_threshold)
                 {

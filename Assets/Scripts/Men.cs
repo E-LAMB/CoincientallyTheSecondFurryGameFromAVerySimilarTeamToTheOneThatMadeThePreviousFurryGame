@@ -16,6 +16,11 @@ public class Men : MonoBehaviour
         SceneManager.LoadScene(number);
     }
 
+    public void LoadSceneExit()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     // Update is called once per frame
     void Update()
     {
