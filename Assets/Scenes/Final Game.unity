@@ -2908,7 +2908,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Cross the pit
+          m_StringArgument: Get to the Ruins
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 112280451}
@@ -13444,7 +13444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464930793}
   m_LocalRotation: {x: -0, y: -0, z: 0.3030877, w: 0.9529627}
-  m_LocalPosition: {x: 30.4, y: 50.1, z: 0}
+  m_LocalPosition: {x: 31.2, y: 54.7, z: 0}
   m_LocalScale: {x: 98.5, y: 189, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14364,8 +14364,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490434963}
   m_LocalRotation: {x: -0, y: -0, z: -0.30308768, w: 0.95296264}
-  m_LocalPosition: {x: 4.411, y: -31.69, z: 2}
-  m_LocalScale: {x: 0.025000002, y: 0.025000002, z: 0.025000002}
+  m_LocalPosition: {x: 3.7, y: -31.66, z: 2}
+  m_LocalScale: {x: 0.026325002, y: 0.026325002, z: 0.026325002}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 464930794}
@@ -26544,8 +26544,9 @@ MonoBehaviour:
   - /start
   - /enable
   - /speaker Actor
-  - Oh the log fell down
-  - We can use that thing we got to cross the gap
+  - Oh, The log fell down... How unfortunate for our acting careers.
+  - If it wasn't for that thing we picked up! It can surely help us close the gap.
+  - From there, We can head to The Ruins. That's the cool place I mentioned.
   - /newob
   - Left Shift to dash
   - /end

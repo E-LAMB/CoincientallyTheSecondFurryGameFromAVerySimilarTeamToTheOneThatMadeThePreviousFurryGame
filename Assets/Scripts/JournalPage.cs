@@ -6,7 +6,7 @@ using UnityEngine;
 public class JournalPage
 {
     public string name;
-    public Sprite[] page_sprites;
-    public string[] designations;
+    public GameObject[] page_sprites;
+    public int needed_progress;
     
 }
