@@ -27,12 +27,12 @@ public class TalosCalled : MonoBehaviour
             while (heat > 0 && not_found)
             {
                 target_slot += 1;
-                if (my_objectives.Length >= my_objectives.Length)
+                if (target_slot >= my_objectives.Length)
                 {
                     target_slot = 0;
                 }
 
-                if (objective.text != my_objectives[target_slot])
+                if (objective.text != my_objectives[target_slot] && my_objectives[target_slot] != "")
                 {
                     not_found = false;
                     heat = -20;
@@ -63,7 +63,7 @@ public class TalosCalled : MonoBehaviour
         bool has_stacked = false;
         for (int a = 0; a < my_objectives.Length; a++)
         {
-            if (my_objectives[a] != "" && !has_stacked)
+            if (my_objectives[a] == "" && !has_stacked)
             {
                 has_stacked = true;
                 my_objectives[a] = new_objective;
