@@ -303,11 +303,6 @@ public class DialougePlayer : MonoBehaviour
                 // temp
                 Debug.Log("Temp");
             }
-            else if (stolen_lines[current_option] == "skip1") {current_option++;}
-            else if (stolen_lines[current_option] == "skip2") { current_option+=2; }
-            else if (stolen_lines[current_option] == "skip3") { current_option+=3; }
-            else if (stolen_lines[current_option] == "skip4") { current_option+=4; }
-            else if (stolen_lines[current_option] == "skip5") { current_option += 5; }
 
 
         } else
