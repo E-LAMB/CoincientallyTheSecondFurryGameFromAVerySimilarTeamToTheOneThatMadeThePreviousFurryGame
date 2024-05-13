@@ -7,6 +7,7 @@ public class JournalPage
 {
     public string name;
     public GameObject[] page_sprites;
-    public int needed_progress;
+    public string[] designations;
+    public int needed_total_progress;
     
 }

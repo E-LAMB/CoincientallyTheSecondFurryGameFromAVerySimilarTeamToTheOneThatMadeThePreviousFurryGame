@@ -47,6 +47,14 @@ public class Journal : MonoBehaviour
 
     public void LoadPage(int to_load)
     {
+        for (int a = 0; a < page.Length; a++)
+        {
+            for (int b = 0; b < page[a].page_sprites.Length; b++)
+            {
+                page[a].page_sprites[b].SetActive(false);
+            }
+        }
+
         int progress = 0;
 
         for (int i = 0; i < page[to_load].designations.Length; i++)
@@ -57,7 +65,8 @@ public class Journal : MonoBehaviour
             }
         }
 
-        page_sprite.sprite = page[to_load].page_sprites[progress];
+        if (progress > 0) {page[to_load].page_sprites[0].SetActive(true);}
+        if (progress == page[to_load].needed_total_progress) {page[to_load].page_sprites[1].SetActive(true);}
     }
 
     // Start is called before the first frame update
