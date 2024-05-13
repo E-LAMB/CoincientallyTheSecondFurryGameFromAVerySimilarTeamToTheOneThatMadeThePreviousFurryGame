@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.34, g: 0.1836, b: 0.19484447, a: 0.2}
+  m_Color: {r: 1, g: 0.43867922, b: 0.48077816, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Replay Credits
+  m_Text: Credits
 --- !u!222 &203019009
 CanvasRenderer:
   m_ObjectHideFlags: 0

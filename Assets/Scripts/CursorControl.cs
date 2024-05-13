@@ -155,10 +155,10 @@ public class CursorControl : MonoBehaviour
                         cursor_sprite.sprite = sprite_yescam;
                         if (Input.GetKeyDown(KeyCode.Mouse0))
                         {
+                            my_player.Button_Camera();
                             closest_photo.Capture();
                             nearby_photo_ops = Object.FindObjectsOfType<PhotoOp>();
                             cam_flash.SetTrigger("FlashCamera");
-                            my_player.Button_Camera();
                         }
                     }
                 }

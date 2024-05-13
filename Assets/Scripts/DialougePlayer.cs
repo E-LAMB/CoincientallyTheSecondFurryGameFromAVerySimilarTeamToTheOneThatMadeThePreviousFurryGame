@@ -293,7 +293,7 @@ public class DialougePlayer : MonoBehaviour
     void Update()
     {
         //if ((Input.GetKeyDown(progression_key) || Input.GetMouseButtonDown(0)) && can_progress && !automated_progression)
-        if ((Input.GetKeyDown(progression_key)) && can_progress && !automated_progression)
+        if ((Input.GetKeyDown(progression_key)) && can_progress && !automated_progression && in_dialouge)
         {
             ProcessLine();
         }
