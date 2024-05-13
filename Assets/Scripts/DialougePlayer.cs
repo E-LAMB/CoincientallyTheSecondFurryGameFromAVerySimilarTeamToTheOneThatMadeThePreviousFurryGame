@@ -45,6 +45,7 @@ public class DialougePlayer : MonoBehaviour
 
     public float auto_cooldown;
 
+    public bool command_choice;
     public TalosCalled talos;
 
     // Start is called before the first frame update
@@ -70,11 +71,24 @@ public class DialougePlayer : MonoBehaviour
         ProcessLine();
     }
 
-    public void ChoiceMade()
+    public void ChoiceMade(int chosen)
     {
         can_progress = true;
         choice_buttons.SetActive(false);
         ProcessLine();
+        if (command_choice)
+        {
+            current_option -= 1;
+            current_option += chosen;
+            my_text.text = stolen_lines[current_option];
+
+            current_option += 1;
+            if (chosen == 0)
+            {
+                current_option += 1;
+            }
+            command_choice = false;
+        }
     }
 
     public void DecidedSpecial()
@@ -267,6 +281,17 @@ public class DialougePlayer : MonoBehaviour
                 current_option++;
                 choiceB.text = stolen_lines[current_option];
             }
+            else if (stolen_lines[current_option] == "/choice&concequence")
+            {
+                choice_buttons.SetActive(true);
+                can_progress = false;
+                force_progress = false;
+                current_option++;
+                choiceA.text = stolen_lines[current_option];
+                current_option++;
+                choiceB.text = stolen_lines[current_option];
+                command_choice = true;
+            }
             else if (stolen_lines[current_option] == "/special choice")
             {
                 special_textbox.SetActive(true);
@@ -278,6 +303,11 @@ public class DialougePlayer : MonoBehaviour
                 // temp
                 Debug.Log("Temp");
             }
+            else if (stolen_lines[current_option] == "skip1") {current_option++;}
+            else if (stolen_lines[current_option] == "skip2") { current_option+=2; }
+            else if (stolen_lines[current_option] == "skip3") { current_option+=3; }
+            else if (stolen_lines[current_option] == "skip4") { current_option+=4; }
+            else if (stolen_lines[current_option] == "skip5") { current_option += 5; }
 
 
         } else

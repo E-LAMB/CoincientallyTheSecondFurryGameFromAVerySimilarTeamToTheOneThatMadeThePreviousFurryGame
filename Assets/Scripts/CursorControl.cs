@@ -14,6 +14,8 @@ public class CursorControl : MonoBehaviour
 
     public Transform cursor_trans;
     public Camera main_cam;
+    public Camera cursor_cam;
+    public Camera map_cam;
 
     public SpriteRenderer cursor_sprite;
     public Player my_player;
@@ -50,6 +52,10 @@ public class CursorControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        cursor_cam.orthographicSize = main_cam.orthographicSize;
+        map_cam.orthographicSize = main_cam.orthographicSize;
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
 
