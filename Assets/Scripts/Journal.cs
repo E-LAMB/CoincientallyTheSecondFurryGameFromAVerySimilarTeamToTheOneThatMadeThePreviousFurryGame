@@ -11,8 +11,6 @@ public class Journal : MonoBehaviour
     public JournalPage[] page;
     public int current_page;
 
-    public Image page_sprite;
-
     public GameObject my_stage;
 
     public void Open()
