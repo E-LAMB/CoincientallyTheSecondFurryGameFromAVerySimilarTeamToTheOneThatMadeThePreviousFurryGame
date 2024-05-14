@@ -73,7 +73,7 @@ public class CursorControl : MonoBehaviour
             {
                 if (Vector3.Distance(all_ints[i].transform.position, cursor_trans.position) < distance)
                 {
-                    if (all_ints[i].isActiveAndEnabled)
+                    if (all_ints[i].isActiveAndEnabled && !all_ints[i].look_useless)
                     {
                         closest_interactible = all_ints[i];
                         distance = Vector3.Distance(all_ints[i].transform.position, cursor_trans.position);

@@ -11,6 +11,11 @@ public class PhotoOp : MonoBehaviour
     public bool blocked;
     public UnityEvent on_snap;
 
+    public void MakeAvaliable()
+    {
+        avaliable = true;
+    }
+
     public void Capture()
     {
         if (avaliable && !blocked)

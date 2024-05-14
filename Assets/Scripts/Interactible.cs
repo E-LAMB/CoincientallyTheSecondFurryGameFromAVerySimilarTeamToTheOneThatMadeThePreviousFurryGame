@@ -9,6 +9,12 @@ public class Interactible : MonoBehaviour
 
     public bool can_interact_with;
     public UnityEvent my_event;
+    public bool look_useless;
+
+    public void AppearUseful()
+    {
+        look_useless = false;
+    }
 
     public void InteractionState(bool new_state)
     {

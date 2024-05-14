@@ -22,7 +22,6 @@ public class TalosCalled : MonoBehaviour
         {
             bool not_found = true;
             int heat = 20;
-            target_slot += 1;
 
             while (heat > 0 && not_found)
             {
