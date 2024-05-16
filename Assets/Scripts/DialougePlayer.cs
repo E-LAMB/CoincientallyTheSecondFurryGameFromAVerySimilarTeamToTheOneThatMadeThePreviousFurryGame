@@ -62,6 +62,7 @@ public class DialougePlayer : MonoBehaviour
             stolen_lines[place] = input.script_lines[place];
             place += 1;
         }
+        choice_buttons.SetActive(false);
 
         stolen1 = input.event_1;
         stolen2 = input.event_2;
