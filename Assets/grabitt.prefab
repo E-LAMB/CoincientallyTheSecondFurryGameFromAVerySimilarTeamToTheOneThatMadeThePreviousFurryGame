@@ -36,7 +36,7 @@ Transform:
   - {fileID: 651544247479784507}
   - {fileID: 3289592355657835020}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3217050396490490861
 GameObject:
@@ -539,6 +539,7 @@ MonoBehaviour:
   self: {fileID: 4911724732639088925}
   my_anim: {fileID: 8681670750391447634}
   movement_speed: 3
+  my_flipper: {fileID: 6221485843112711118}
 --- !u!1 &6510161386274855510
 GameObject:
   m_ObjectHideFlags: 0

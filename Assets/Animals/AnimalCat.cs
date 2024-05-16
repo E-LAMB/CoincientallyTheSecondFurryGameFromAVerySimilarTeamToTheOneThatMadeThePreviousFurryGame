@@ -27,6 +27,8 @@ public class AnimalCat : MonoBehaviour
 
     public float movement_speed;
 
+    public SpriteRenderer my_flipper;
+
     // Start is called before the first frame update
     void Start()
     {

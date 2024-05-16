@@ -1,0 +1,375 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &178931088216306576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4565317938497604099}
+  - component: {fileID: 5007163894581971588}
+  m_Layer: 0
+  m_Name: had 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4565317938497604099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178931088216306576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2096784323766447497}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5007163894581971588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178931088216306576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d254d88ac0f144a8a7f58830053243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script_lines:
+  - /start
+  - /enable
+  - /speaker Twig
+  - (It's a small golden cube, Picking it up you feel a slight tingle.)
+  - (Suddenly - You begin to remember!)
+  - '"Have you ever felt tired beyond belief? Have you ever gotten home and just
+    wanted to kick up your feet?"'
+  - '"Well these ones- These might be your style! Got busywork? With these - You
+    don''t!"'
+  - That wasn't one of my memories...
+  - I wonder who this memory belongs to...
+  - /clearob
+  - Find Memory Cubes (1/3)
+  - /stackob
+  - Find Memory Cubes (2/3)
+  - /end
+  event_1:
+    m_PersistentCalls:
+      m_Calls: []
+  event_2:
+    m_PersistentCalls:
+      m_Calls: []
+  event_3:
+    m_PersistentCalls:
+      m_Calls: []
+  random_checkbox: 0
+--- !u!1 &6418638841283897533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4223549590464648799}
+  - component: {fileID: 5746529601995039984}
+  m_Layer: 0
+  m_Name: had 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4223549590464648799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6418638841283897533}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2096784323766447497}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5746529601995039984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6418638841283897533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d254d88ac0f144a8a7f58830053243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script_lines:
+  - /start
+  - /enable
+  - /speaker Twig
+  - (It's a small golden cube, Picking it up you feel a slight tingle.)
+  - (Suddenly - You begin to remember!)
+  - '"The future is now thanks to science! Why speak to a person when you can speak
+    to a personality head?"'
+  - '"This innovative invention is only the start! Soon enough you''ll see the applications!"'
+  - That wasn't one of my memories...
+  - Maybe this will help inspire the artists, Although it might be better to try
+    and find more of these cubes.
+  - /clearob
+  - Inspire the Artists
+  - /stackob
+  - Find Memory Cubes (1/3)
+  - /end
+  event_1:
+    m_PersistentCalls:
+      m_Calls: []
+  event_2:
+    m_PersistentCalls:
+      m_Calls: []
+  event_3:
+    m_PersistentCalls:
+      m_Calls: []
+  random_checkbox: 0
+--- !u!1 &7079675108437850913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2246927403274689117}
+  - component: {fileID: 7970664194790180827}
+  m_Layer: 0
+  m_Name: had 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2246927403274689117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7079675108437850913}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2096784323766447497}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7970664194790180827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7079675108437850913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d254d88ac0f144a8a7f58830053243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script_lines:
+  - /start
+  - /enable
+  - /speaker Twig
+  - (It's a small golden cube, Picking it up you feel a slight tingle.)
+  - (Suddenly - You begin to remember!)
+  - '"Sure, Art is lovely- But who has the time? I don''t! Presenting the latest
+    model-"'
+  - '"With interchangable personalities - This robot is able to produce even the
+    finest of arts!"'
+  - '"Isn''t it amazing how far we''ve come?"'
+  - That wasn't one of my memories...
+  - This should be enough to inspire the artists.
+  - /clearob
+  - Find Memory Cubes (2/3)
+  - /stackob
+  - Return to the Artists
+  - /event 1
+  - /end
+  event_1:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  event_2:
+    m_PersistentCalls:
+      m_Calls: []
+  event_3:
+    m_PersistentCalls:
+      m_Calls: []
+  random_checkbox: 0
+--- !u!1 &8157206035501250912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2096784323766447497}
+  - component: {fileID: 1161290773176123477}
+  - component: {fileID: 7513970515269012585}
+  - component: {fileID: 3051767580395556592}
+  m_Layer: 0
+  m_Name: inspire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2096784323766447497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157206035501250912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.304, y: -92.083, z: 0}
+  m_LocalScale: {x: 0.19630377, y: 0.19630377, z: 0.19630377}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4223549590464648799}
+  - {fileID: 4565317938497604099}
+  - {fileID: 2246927403274689117}
+  m_Father: {fileID: 0}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1161290773176123477
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157206035501250912}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: cc30529daccaae54f84a8124ea2b4c15, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3, y: 3}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &7513970515269012585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157206035501250912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46192a7d31959e94faafc88c2c28f602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  can_interact_with: 1
+  my_event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3051767580395556592}
+        m_TargetAssemblyTypeName: Inspiration, Assembly-CSharp
+        m_MethodName: PickedUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7513970515269012585}
+        m_TargetAssemblyTypeName: Interactible, Assembly-CSharp
+        m_MethodName: InteractionState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  look_useless: 0
+--- !u!114 &3051767580395556592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157206035501250912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1c66460b7ed0843a2ec20088043fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script_has_0: {fileID: 5746529601995039984}
+  script_has_1: {fileID: 5007163894581971588}
+  script_has_2: {fileID: 7970664194790180827}
+  my_player: {fileID: 0}
