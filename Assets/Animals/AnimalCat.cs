@@ -42,6 +42,7 @@ public class AnimalCat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        time_since_burrow = -20f;
         time_since_burrow += Time.deltaTime;
         my_anim.SetInteger("Current State", state);
 

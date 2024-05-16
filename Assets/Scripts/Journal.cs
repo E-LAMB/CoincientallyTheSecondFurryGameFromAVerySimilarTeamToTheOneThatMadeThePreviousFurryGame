@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Journal : MonoBehaviour
@@ -13,11 +14,14 @@ public class Journal : MonoBehaviour
 
     public GameObject my_stage;
 
+    public AudioSource my_audio;
+
     public void Open()
     {
 
-        my_stage.SetActive(true);
-        TurnPage(0);
+        my_stage.SetActive(true);   
+        current_page = 0;
+        LoadPage(current_page);
 
     }
 
@@ -31,16 +35,21 @@ public class Journal : MonoBehaviour
     public void TurnPage(int direction)
     {
         current_page += direction;
+        bool should_play = true;
 
         if (current_page > page.Length - 1)
         {
             current_page = page.Length - 1;
+            should_play = false;
+
         } else if (current_page < 0)
         {
             current_page = 0;
+            should_play = false;
         }
 
         LoadPage(current_page);
+        if (should_play) { my_audio.Play(); }
     }
 
     public void LoadPage(int to_load)
@@ -62,6 +71,8 @@ public class Journal : MonoBehaviour
                 progress++;
             }
         }
+
+        if (progress == 0) { page[to_load].page_sprites[2].SetActive(true); }
 
         if (progress > 0) {page[to_load].page_sprites[0].SetActive(true);}
         if (progress == page[to_load].needed_total_progress) {page[to_load].page_sprites[1].SetActive(true);}
