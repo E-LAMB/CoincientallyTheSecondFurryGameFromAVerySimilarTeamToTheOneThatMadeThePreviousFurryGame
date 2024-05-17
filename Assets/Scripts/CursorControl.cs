@@ -50,7 +50,7 @@ public class CursorControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
 
         cursor_cam.orthographicSize = main_cam.orthographicSize;

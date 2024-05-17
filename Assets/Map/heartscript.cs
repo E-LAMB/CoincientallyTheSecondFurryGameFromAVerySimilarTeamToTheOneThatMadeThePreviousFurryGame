@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inspiration : MonoBehaviour
+public class heartscript : MonoBehaviour
 {
-    public static int collected_cubes;
+    public static int collected_shards;
 
     public DialougeScript script_has_0;
     public DialougeScript script_has_1;
@@ -13,25 +13,26 @@ public class Inspiration : MonoBehaviour
 
     public void Start()
     {
-        collected_cubes = 0;
+        collected_shards = 0;
     }
 
     public void PickedUp()
     {
-        if (collected_cubes == 0)
+        if (collected_shards == 0)
         {
-            collected_cubes++;
+            collected_shards++;
             my_player.StealFrom(script_has_0);
 
-        } else if (collected_cubes == 1)
+        }
+        else if (collected_shards == 1)
         {
-            collected_cubes++;
+            collected_shards++;
             my_player.StealFrom(script_has_1);
         }
-        else if (collected_cubes == 2)
+        else if (collected_shards == 2)
         {
-            collected_cubes++;
+            collected_shards++;
             my_player.StealFrom(script_has_2);
-        } 
+        }
     }
 }

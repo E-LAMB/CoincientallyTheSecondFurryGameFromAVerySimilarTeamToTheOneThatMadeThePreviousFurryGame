@@ -79,7 +79,7 @@ public class Journal : MonoBehaviour
         if (progress == 0) { page[to_load].page_sprites[2].SetActive(true); }
 
         if (progress > 0) {page[to_load].page_sprites[0].SetActive(true);}
-        if (progress == page[to_load].needed_total_progress) {page[to_load].page_sprites[1].SetActive(true);}
+        if (progress >= page[to_load].needed_total_progress) {page[to_load].page_sprites[1].SetActive(true);}
     }
 
     // Start is called before the first frame update

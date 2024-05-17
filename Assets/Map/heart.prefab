@@ -48,18 +48,12 @@ MonoBehaviour:
   - /start
   - /enable
   - /speaker Twig
-  - (It's a small golden cube, Picking it up you feel a slight tingle.)
-  - (Suddenly - You begin to remember!)
-  - '"Have you ever felt tired beyond belief? Have you ever gotten home and just
-    wanted to kick up your feet?"'
-  - '"Well these ones- These might be your style! Got busywork? With these - You
-    don''t!"'
-  - That wasn't one of my memories...
-  - I wonder who this memory belongs to...
+  - (It's component for a steel heart)
+  - (You pick it up and take it with you)
   - /clearob
-  - Find Memory Cubes (1/3)
+  - Find heart components (1/3)
   - /stackob
-  - Find Memory Cubes (2/3)
+  - Find heart components (2/3)
   - /event 2
   - /end
   event_1:
@@ -132,18 +126,12 @@ MonoBehaviour:
   - /start
   - /enable
   - /speaker Twig
-  - (It's a small golden cube, Picking it up you feel a slight tingle.)
-  - (Suddenly - You begin to remember!)
-  - '"The future is now thanks to science! Why speak to a person when you can speak
-    to a personality head?"'
-  - '"This innovative invention is only the start! Soon enough you''ll see the applications!"'
-  - That wasn't one of my memories...
-  - Maybe this will help inspire the artists, Although it might be better to try
-    and find more of these cubes.
+  - (It's component for a steel heart)
+  - (You pick it up and take it with you)
   - /clearob
-  - Inspire the Artists
+  - Find heart components (0/3)
   - /stackob
-  - Find Memory Cubes (1/3)
+  - Find heart components (1/3)
   - /event 2
   - /end
   event_1:
@@ -216,20 +204,12 @@ MonoBehaviour:
   - /start
   - /enable
   - /speaker Twig
-  - (It's a small golden cube, Picking it up you feel a slight tingle.)
-  - (Suddenly - You begin to remember!)
-  - '"Sure, Art is lovely- But who has the time? I don''t! Presenting the latest
-    model-"'
-  - '"With interchangable personalities - This robot is able to produce even the
-    finest of arts!"'
-  - '"Isn''t it amazing how far we''ve come?"'
-  - That wasn't one of my memories...
-  - This should be enough to inspire the artists.
+  - (It's component for a steel heart)
+  - (Combining the three together, You got the steel heart!)
   - /clearob
-  - Find Memory Cubes (2/3)
+  - Find heart components (2/3)
   - /stackob
-  - Return to the Artists
-  - /event 1
+  - Repair your robot
   - /event 2
   - /end
   event_1:
@@ -277,9 +257,9 @@ GameObject:
   - component: {fileID: 2096784323766447497}
   - component: {fileID: 1161290773176123477}
   - component: {fileID: 7513970515269012585}
-  - component: {fileID: 3051767580395556592}
+  - component: {fileID: 8246602516232157164}
   m_Layer: 0
-  m_Name: inspire
+  m_Name: heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,14 +274,14 @@ Transform:
   m_GameObject: {fileID: 8157206035501250912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.304, y: -92.083, z: 0}
-  m_LocalScale: {x: 0.19630377, y: 0.19630377, z: 0.19630377}
+  m_LocalScale: {x: 0.03619531, y: 0.03619531, z: 0.03619531}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4223549590464648799}
   - {fileID: 4565317938497604099}
   - {fileID: 2246927403274689117}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1161290773176123477
 SpriteRenderer:
@@ -344,7 +324,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cc30529daccaae54f84a8124ea2b4c15, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8808ac5411d732541a776a7fb15ae0b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -371,8 +351,8 @@ MonoBehaviour:
   my_event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3051767580395556592}
-        m_TargetAssemblyTypeName: Inspiration, Assembly-CSharp
+      - m_Target: {fileID: 8246602516232157164}
+        m_TargetAssemblyTypeName: heartscript, Assembly-CSharp
         m_MethodName: PickedUp
         m_Mode: 1
         m_Arguments:
@@ -396,7 +376,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   look_useless: 0
---- !u!114 &3051767580395556592
+--- !u!114 &8246602516232157164
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -405,7 +385,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8157206035501250912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be1c66460b7ed0843a2ec20088043fda, type: 3}
+  m_Script: {fileID: 11500000, guid: 039362a48046ae44d838cf06e76351e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   script_has_0: {fileID: 5746529601995039984}

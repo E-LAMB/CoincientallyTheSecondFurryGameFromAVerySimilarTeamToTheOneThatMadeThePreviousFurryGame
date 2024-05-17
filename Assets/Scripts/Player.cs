@@ -88,6 +88,7 @@ public class Player : MonoBehaviour
 
     public void Button_Camera()
     {
+        rb.velocity = Vector2.zero;
         cursor.LocatePhotos();
         if (cursor.taking_photo)
         {
@@ -100,6 +101,7 @@ public class Player : MonoBehaviour
 
     public void Button_Journal()
     {
+        rb.velocity = Vector2.zero;
         if (journal.open)
         {
             journal.Close();
@@ -216,6 +218,11 @@ public class Player : MonoBehaviour
             gameObject.transform.position = new Vector3(1.5f, 5f, 0f);
             rb.velocity = Vector2.zero;
             ClearCheckpoint();
+        }
+
+        if (DialougePlayer.in_dialouge)
+        {
+            rb.velocity = Vector2.zero;
         }
 
         if (Mind.player_has_control)

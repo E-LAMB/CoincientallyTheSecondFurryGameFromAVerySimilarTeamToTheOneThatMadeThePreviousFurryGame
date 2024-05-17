@@ -17,6 +17,7 @@ public class DecideRobot : MonoBehaviour
     public DialougeScript dia_eyes;
     public DialougeScript dia_legs;
     public DialougeScript dia_arm;
+    public DialougeScript dia_heart;
 
     public Interactible my_int;
 
@@ -40,6 +41,12 @@ public class DecideRobot : MonoBehaviour
         {
             player.StealFrom(dia_eyes);
             has_eyes = false;
+            next_part = "heart";
+        }
+        else if (has_heart && next_part == "heart")
+        {
+            player.StealFrom(dia_heart);
+            has_heart = false;
         }
         else
         {
@@ -66,6 +73,6 @@ public class DecideRobot : MonoBehaviour
 
     private void Update()
     {
-        // my_int.can_interact_with = (has_good_eyes || has_leg || has_arm);
+        //my_int.can_interact_with = (has_eyes || has_leg || has_arm);
     }
 }
