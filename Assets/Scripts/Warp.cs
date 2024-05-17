@@ -18,6 +18,8 @@ public class Warp : MonoBehaviour
     public bool requires_activation;
     public bool one_direction;
 
+    public bool is_ladder;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,15 +27,34 @@ public class Warp : MonoBehaviour
     }
 
     public void UseWarp(string dest)
-    {
-        if (dest == "b")
+    { 
+        if (is_ladder)
         {
-            player.position = point_b.transform.position;
-        } else if (dest == "a")
-        {
-            if (!one_direction)
+            if (Physics2D.OverlapCircle(point_a.transform.position, 1f, player_mask))
             {
-                player.position = point_a.transform.position;
+                if (dest == "b")
+                {
+                    player.position = point_b.transform.position;
+                } else if (dest == "a")
+                {
+                    if (!one_direction)
+                    {
+                        player.position = point_a.transform.position;
+                    }
+                }
+            }
+
+        } else
+        {
+            if (dest == "b")
+            {
+                player.position = point_b.transform.position;
+            } else if (dest == "a")
+            {
+                if (!one_direction)
+                {
+                    player.position = point_a.transform.position;
+                }
             }
         }
     }
