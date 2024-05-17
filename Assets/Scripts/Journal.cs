@@ -16,6 +16,8 @@ public class Journal : MonoBehaviour
 
     public AudioSource my_audio;
 
+    public bool gold_pass;
+
     public void Open()
     {
 
@@ -71,6 +73,8 @@ public class Journal : MonoBehaviour
                 progress++;
             }
         }
+
+        if (gold_pass) { progress = page[to_load].needed_total_progress; }
 
         if (progress == 0) { page[to_load].page_sprites[2].SetActive(true); }
 

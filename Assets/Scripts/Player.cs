@@ -194,6 +194,30 @@ public class Player : MonoBehaviour
             }
         }
 
+        my_col.enabled = true;
+
+        if (Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, checkpoint))
+        {
+            new_checkpoint = gameObject.transform.position;
+        }
+
+
+        if (Vector3.zero != new_checkpoint && Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, oob))
+        {
+            checkpoint_time = 3f;
+        }
+
+        drone.SetActive(checkpoint_time > 0f);
+
+        if (gained_abilities.Contains("Drone") && Input.GetKeyDown(KeyCode.Z) && false)
+        {
+            dashing = true;
+            my_col.enabled = true;
+            gameObject.transform.position = new Vector3(1.5f, 5f, 0f);
+            rb.velocity = Vector2.zero;
+            ClearCheckpoint();
+        }
+
         if (Mind.player_has_control)
         {
             if (standing != null)
@@ -261,30 +285,6 @@ public class Player : MonoBehaviour
                     dash_time = 0f;
                     dashing = true;
                 }
-            }
-
-            my_col.enabled = true;
-
-            if (Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, checkpoint))
-            {
-                new_checkpoint = gameObject.transform.position;
-            }
-
-
-            if (Vector3.zero != new_checkpoint && Physics2D.OverlapCircle(groundchecker.transform.position, 0.1f, oob))
-            {
-                checkpoint_time = 3f;
-            }
-
-            drone.SetActive(checkpoint_time > 0f);
-
-            if (gained_abilities.Contains("Drone") && Input.GetKeyDown(KeyCode.Z) && false)
-            {
-                dashing = true;
-                my_col.enabled = true;
-                gameObject.transform.position = new Vector3(1.5f, 5f, 0f);
-                rb.velocity = Vector2.zero;
-                ClearCheckpoint();
             }
 
             if (checkpoint_time < 0f)
