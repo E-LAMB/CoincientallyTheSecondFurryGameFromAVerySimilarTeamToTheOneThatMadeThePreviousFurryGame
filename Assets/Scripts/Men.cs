@@ -17,6 +17,11 @@ public class Men : MonoBehaviour
         
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     public static void LoadScene(int number)
     {
         SceneManager.LoadScene(number);
@@ -25,6 +30,16 @@ public class Men : MonoBehaviour
     public void LoadSceneExit()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     // Update is called once per frame

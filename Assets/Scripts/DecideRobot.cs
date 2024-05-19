@@ -23,6 +23,8 @@ public class DecideRobot : MonoBehaviour
 
     public TalosCalled talos;
 
+    public Animator credit_anim;
+
     public void ChooseDialouge()
     {
         if (has_arm)
@@ -63,12 +65,17 @@ public class DecideRobot : MonoBehaviour
         }
     }
 
+    public void LoadCredits()
+    {
+        credit_anim.SetTrigger("play_anim");
+    }
+
     public void CollectPart(string fixed_part)
     {
         if (fixed_part == "eye") { has_eyes = true; }
         if (fixed_part == "leg") { has_leg = true; }
         if (fixed_part == "arm") { has_arm = true; }
-        if (fixed_part == "heart") { has_heart = true; }
+        if (fixed_part == "heart") { has_heart = true; Debug.Log("got heart");}
     }
 
     private void Update()
